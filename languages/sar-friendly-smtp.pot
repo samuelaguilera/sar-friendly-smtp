@@ -1,0 +1,241 @@
+# Copyright 2015 Samuel Aguilera
+msgid ""
+msgstr ""
+"Project-Id-Version: sar-friendly-smtp\n"
+"POT-Creation-Date: 2015-12-07 19:30+0100\n"
+"PO-Revision-Date: 2015-12-07 19:30+0100\n"
+"Last-Translator: Samuel Aguilera <samuel@rocketgenius.com>\n"
+"Language-Team: Samuel Aguilera <correo@samuelguilera.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/email-test.php:8 includes/email-test.php:48
+#: includes/email-test.php:55
+msgid "Send Email Test"
+msgstr ""
+
+#: includes/email-test.php:24
+msgid "SAR Friendly SMTP - Send Email Test"
+msgstr ""
+
+#: includes/email-test.php:29
+msgid ""
+"<p>According to WordPress <strong>the email has been passed correctly to the "
+"SMTP server</strong>.<p>This means that <strong>now the SMTP server will "
+"process the email and send it or reject</strong> based on the server "
+"policies. If you don't receive the email, contact with your SMTP server "
+"support.</p>"
+msgstr ""
+
+#: includes/email-test.php:32
+msgid "WordPress was not able to pass the email to the SMTP server."
+msgstr ""
+
+#: includes/email-test.php:35
+msgid "Error returned by PHPMailer class:"
+msgstr ""
+
+#: includes/email-test.php:37
+msgid ""
+"No additional information has been provided by PHPMailer class. Try enabling "
+"Error Log in Debug Mode setting and checking your server logs."
+msgstr ""
+
+#: includes/email-test.php:47
+msgid "SAR Friendly SMTP"
+msgstr ""
+
+#: includes/email-test.php:50
+msgid ""
+"<p>From this screen you can try to send an email to the WordPress admin "
+"email in <strong>Settings -> General -> E-mail Address</strong> to see if "
+"your SMTP settings are correct.</p><p>Simply click the button below.</p>"
+msgstr ""
+
+#: includes/options.php:33
+msgid "SMTP Server details"
+msgstr ""
+
+#: includes/options.php:40
+msgid "Username"
+msgstr ""
+
+#: includes/options.php:45
+msgid ""
+"Most SMTP servers (i.e. Gmail/Google Apps) requires your full email address "
+"as username."
+msgstr ""
+
+#: includes/options.php:50
+#, fuzzy
+msgid "Password"
+msgstr "Heslo"
+
+#: includes/options.php:59
+msgid "SMTP Server"
+msgstr ""
+
+#: includes/options.php:63
+msgid "Hostname of your SMTP server (e.g. smtp.gmail.com)."
+msgstr ""
+
+#: includes/options.php:68
+msgid "Port"
+msgstr ""
+
+#: includes/options.php:72
+msgid ""
+"If your server uses encryption, this should be 587 or 465 (e.g. Gmail and "
+"Mandrill uses 587). If not, standard non encrypted port is 25."
+msgstr ""
+
+#: includes/options.php:77
+msgid "Encryption"
+msgstr ""
+
+#: includes/options.php:81
+msgid ""
+"When using ecryption, most common setting is TLS. (e.g. Gmail and Mandrill "
+"uses TLS)."
+msgstr ""
+
+#: includes/options.php:89
+msgid "FROM Field Settings (Optional)"
+msgstr ""
+
+#: includes/options.php:96
+#, fuzzy
+msgid "FROM Name"
+msgstr "Od mena"
+
+#: includes/options.php:100
+msgid ""
+"Name for the email FROM field. Only used if the original email uses your "
+"Site Title from Settings -> General."
+msgstr ""
+
+#: includes/options.php:106
+msgid "FROM Address"
+msgstr ""
+
+#: includes/options.php:110
+msgid ""
+"Email address for the email FROM field. Only used if the outgoing original "
+"message uses default value: wordpress@yourdomain.com"
+msgstr ""
+
+#: includes/options.php:117
+msgid "Miscellaneous Settings"
+msgstr ""
+
+#: includes/options.php:124
+msgid "Debug Mode"
+msgstr ""
+
+#: includes/options.php:128
+msgid ""
+"Error Log option adds commands and data between WordPress and your SMTP "
+"server to PHP error_log file. <a href=\"https://wordpress.org/plugins/sar-"
+"friendly-smtp/faq/\" title=\"SAR Friendly SMTP - FAQ\" target=\"_blank"
+"\">More information in the plugin's FAQ.</a>"
+msgstr ""
+
+#: includes/options.php:138
+msgid ""
+"This setting is being overridden by SAR_FSMTP_FROM_NAME constant set in your "
+"wp-config.php file."
+msgstr ""
+
+#: includes/options.php:154
+msgid ""
+"This setting is being overridden by SAR_FSMTP_FROM constant set in your wp-"
+"config.php file."
+msgstr ""
+
+#: includes/options.php:170
+msgid ""
+"This setting is being overridden by SAR_FSMTP_USER constant set in your wp-"
+"config.php file."
+msgstr ""
+
+#: includes/options.php:186
+msgid ""
+"This setting is being overridden by SAR_FSMTP_PASSWORD constant set in your "
+"wp-config.php file."
+msgstr ""
+
+#: includes/options.php:201
+msgid ""
+"This setting is being overridden by SAR_FSMTP_HOST constant set in your wp-"
+"config.php file."
+msgstr ""
+
+#: includes/options.php:216
+msgid ""
+"This setting is being overridden by SAR_FSMTP_PORT constant set in your wp-"
+"config.php file."
+msgstr ""
+
+#: includes/options.php:232
+msgid ""
+"This setting is being overridden by SAR_FSMTP_ENCRYPTION constant set in "
+"your wp-config.php file."
+msgstr ""
+
+#: includes/options.php:237
+#, fuzzy
+msgid "None"
+msgstr "Žiadne"
+
+#: includes/options.php:238
+msgid "TLS"
+msgstr ""
+
+#: includes/options.php:239
+msgid "SSL"
+msgstr ""
+
+#: includes/options.php:252
+#, fuzzy
+msgid "Off"
+msgstr "Desactivado"
+
+#: includes/options.php:253
+msgid "Error Log"
+msgstr ""
+
+#: includes/options.php:263
+msgid ""
+"These settings are <strong>required</strong>. Be sure to put the correct "
+"settings here or your mail send will fail. If you're not sure about what "
+"values you need to put in each field, contact your SMTP server support. "
+"After saving these settings you can test them from Tools -> Send Email Test."
+msgstr ""
+
+#: includes/options.php:269
+msgid ""
+"These settings are optional and only used if no other plugin using wp_mail() "
+"set his own data for these fields. (E.g. If you use Gravity Forms, these "
+"settings <strong>will not replace</strong> your FROM name/address for "
+"notifications created in Form Settings -> Notifications). If you leave this "
+"blank and no other plugin is setting their own info, WordPress will use the "
+"default core settings for these fields."
+msgstr ""
+
+#: includes/options.php:275
+msgid ""
+"These settings are optional too. Remember to turn off Debug Mode when you're "
+"done with the troubleshooting to avoid raising your server load by "
+"generating unnecessary logs."
+msgstr ""

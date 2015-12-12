@@ -3,8 +3,8 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E45TMW9JCPRW
 Tags: email, smtp, notifications, phpmailer, sendmail, gmail, mandrill, wp_mail
 Requires at least: 3.9.3
-Tested up to: 4.3
-Stable tag: 1.0.6
+Tested up to: 4.3.1
+Stable tag: 1.1
 License: GPL3
 
 A friendly SMTP plugin for WordPress. No third-party, simply using WordPress native possibilities.
@@ -28,6 +28,7 @@ If you're happy with the plugin [please don't forget to give it a good rating](h
 * Uses WordPress settings API for settings page, making it secure by default.
 * Custom capability for settings access, so you can allow non administrator users to access to the settings page if you need it using [User Role Editor](https://wordpress.org/plugins/user-role-editor/) (or any other similar plugin).
 * Send Email Test page in Tools menu. Allowing you to test if WordPress is able to send emails using the SMTP server details provided.
+* Constants available to override settings using wp-config.php (useful to set same settings network-wide on a multi-site installation).
 
 = Requirements =
 
@@ -93,7 +94,32 @@ Therefore the FROM Name setting is only used when the email has the default valu
 
 An example of plugin that makes your emails to be sent with the site name is BuddyPress (tested with BP 2.2.1).
 
+= Can I set the SMTP server configuration from wp-config.php using constants? =
+
+Since version 1.1 you can do this. Below you can see an example of use.
+
+`define( 'SAR_FSMTP_USER', 'your_username' );
+define( 'SAR_FSMTP_PASSWORD', 'your_password' );
+define( 'SAR_FSMTP_HOST', 'smtp.example.com' );
+// IMPORTANT! Don't use quotes for the SAR_FSMTP_PORT value!
+define( 'SAR_FSMTP_PORT', 587 );
+define( 'SAR_FSMTP_ENCRYPTION', 'tls' );
+// These two are optional. SAR_FSMTP_FROM must be a valid email according to is_email() WP core function.
+define( 'SAR_FSMTP_FROM', 'you@example.com' );
+define( 'SAR_FSMTP_FROM_NAME', 'Your Name' );`
+
+This is useful if you want to use the same settings network-wide in a WordPress network (multisite installation).
+
 == Changelog ==
+
+= 1.1 =
+
+* Added constants SAR_FSMTP_SMTP_USER, SAR_FSMTP_PASSWORD, SAR_FSMTP_HOST, SAR_FSMTP_PORT, SAR_FSMTP_ENCRYPTION, SAR_FSMTP_FROM, SAR_FSMTP_FROM_NAME to override settings from wp-config.php
+* Hide input field for a setting when it's being overridden by its constant in wp-config.php
+* Added links to Settings and Send Email Test pages from Plugins list page.
+* Completed translation support.
+* Added Spanish (es_ES) translation.
+* Fixed fatal error in WP 4.4
 
 = 1.0.6 =
 
@@ -112,3 +138,9 @@ An example of plugin that makes your emails to be sent with the site name is Bud
 
 * First public release.
 
+== Upgrade Notice ==
+
+= 1.1 =
+
+* NOTICE: This update fixes a fatal error due to a change in WP 4.4 core, update this plugin BEFORE updating WP to 4.4.x
+                                                                                                                        

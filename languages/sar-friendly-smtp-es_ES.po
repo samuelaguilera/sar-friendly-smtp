@@ -1,0 +1,292 @@
+# Copyright 2015 Samuel Aguilera
+msgid ""
+msgstr ""
+"Project-Id-Version: sar-friendly-smtp\n"
+"POT-Creation-Date: 2015-12-07 19:29+0100\n"
+"PO-Revision-Date: 2015-12-07 19:52+0100\n"
+"Last-Translator: Samuel Aguilera <samuel@rocketgenius.com>\n"
+"Language-Team: Samuel Aguilera <correo@samuelguilera.com>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/email-test.php:8 includes/email-test.php:48
+#: includes/email-test.php:55
+msgid "Send Email Test"
+msgstr "Prueba envío email"
+
+#: includes/email-test.php:24
+msgid "SAR Friendly SMTP - Send Email Test"
+msgstr "SAR Friendly SMTP - Prueba de envío de email"
+
+#: includes/email-test.php:29
+msgid ""
+"<p>According to WordPress <strong>the email has been passed correctly to the "
+"SMTP server</strong>.<p>This means that <strong>now the SMTP server will "
+"process the email and send it or reject</strong> based on the server "
+"policies. If you don't receive the email, contact with your SMTP server "
+"support.</p>"
+msgstr ""
+"<p>Según WordPress <strong>el email se ha pasado al servidor SMTP "
+"correctamente</strong>.<p>Esto significa que <strong>ahora el servidor SMTP "
+"lo procesará y enviará o rechazará</strong> basándose en las políticas del "
+"servidor. Si no recibes el email, contacta con el soporte de tu servidor "
+"SMTP.</p>"
+
+#: includes/email-test.php:32
+msgid "WordPress was not able to pass the email to the SMTP server."
+msgstr "WordPress no pudo pasar el email al servidor SMTP."
+
+#: includes/email-test.php:35
+msgid "Error returned by PHPMailer class:"
+msgstr "Error proporcionado por la clase PHPMailer:"
+
+#: includes/email-test.php:37
+msgid ""
+"No additional information has been provided by PHPMailer class. Try enabling "
+"Error Log in Debug Mode setting and checking your server logs."
+msgstr ""
+"La clase PHPMailer no ha proporcionado información adicional. Prueba a "
+"activar el registro de errores en el modo depuración y comprueba los "
+"archivos de registro de tu servidor."
+
+#: includes/email-test.php:47
+msgid "SAR Friendly SMTP"
+msgstr "SAR Friendly SMTP"
+
+#: includes/email-test.php:50
+msgid ""
+"<p>From this screen you can try to send an email to the WordPress admin "
+"email in <strong>Settings -> General -> E-mail Address</strong> to see if "
+"your SMTP settings are correct.</p><p>Simply click the button below.</p>"
+msgstr ""
+"<p>Desde esta pantalla puedes probar a enviar un email a la dirección de "
+"email del administrador de WordPress en <strong>Ajustes -> General -> "
+"Dirección de e-mail</strong> para ver si los ajustes SMTP son correctos.</"
+"p><p>Simplemente haz clic en el botón a continuación.</p>"
+
+#: includes/options.php:33
+msgid "SMTP Server details"
+msgstr "Datos del servidor SMTP"
+
+#: includes/options.php:40
+msgid "Username"
+msgstr "Usuario"
+
+#: includes/options.php:45
+msgid ""
+"Most SMTP servers (i.e. Gmail/Google Apps) requires your full email address "
+"as username."
+msgstr ""
+"La mayoría de servidores SMTP (p.ej. Gmail/Google Apps) necesitan tu "
+"dirección de email completa como nombre de usuario."
+
+#: includes/options.php:50
+msgid "Password"
+msgstr "Contraseña"
+
+#: includes/options.php:59
+msgid "SMTP Server"
+msgstr "Servidor SMTP"
+
+#: includes/options.php:63
+msgid "Hostname of your SMTP server (e.g. smtp.gmail.com)."
+msgstr "Nombre de tu servidor SMTP (p.ej. smtp.gmail.com)."
+
+#: includes/options.php:68
+msgid "Port"
+msgstr "Puerto"
+
+#: includes/options.php:72
+msgid ""
+"If your server uses encryption, this should be 587 or 465 (e.g. Gmail and "
+"Mandrill uses 587). If not, standard non encrypted port is 25."
+msgstr ""
+"Si tu servidor usa encriptación, esto debería ser 587 o 465 (p.ej. Gmail and "
+"Mandrill uses 587). Sino, el puerto estándar sin encriptación es el 25."
+
+#: includes/options.php:77
+msgid "Encryption"
+msgstr "Encriptación"
+
+#: includes/options.php:81
+msgid ""
+"When using ecryption, most common setting is TLS. (e.g. Gmail and Mandrill "
+"uses TLS)."
+msgstr ""
+"Cuando se usa encriptación el ajuste más utilizado habitualmente es TLS. (p."
+"ej. Gmail y Mandrill usan TLS)."
+
+#: includes/options.php:89
+msgid "FROM Field Settings (Optional)"
+msgstr "Ajustes del campo FROM (Opcional)"
+
+#: includes/options.php:96
+msgid "FROM Name"
+msgstr "Nombre FROM"
+
+#: includes/options.php:100
+msgid ""
+"Name for the email FROM field. Only used if the original email uses your "
+"Site Title from Settings -> General."
+msgstr ""
+"Nombre para el campo FROM. Sólo se usa si el email original usa el título de "
+"tu sitio web configurado en Ajustes -> General."
+
+#: includes/options.php:106
+msgid "FROM Address"
+msgstr "Dirección FROM"
+
+#: includes/options.php:110
+msgid ""
+"Email address for the email FROM field. Only used if the outgoing original "
+"message uses default value: wordpress@yourdomain.com"
+msgstr ""
+"Dirección de email para el campo FROM. Sólo se usa si el email original usa "
+"el valor predeterminado: wordpress@ejemplo.com"
+
+#: includes/options.php:117
+msgid "Miscellaneous Settings"
+msgstr "Otros ajustes"
+
+#: includes/options.php:124
+msgid "Debug Mode"
+msgstr "Modo depuración"
+
+#: includes/options.php:128
+msgid ""
+"Error Log option adds commands and data between WordPress and your SMTP "
+"server to PHP error_log file. <a href=\"https://wordpress.org/plugins/sar-"
+"friendly-smtp/faq/\" title=\"SAR Friendly SMTP - FAQ\" target=\"_blank"
+"\">More information in the plugin's FAQ.</a>"
+msgstr ""
+"La opción de registro de depuración añade los comandos y datos entre "
+"WordPress y tu servidor SMTP al archivo error_log de PHP. <a href=\"https://"
+"wordpress.org/plugins/sar-friendly-smtp/faq/\" title=\"SAR Friendly SMTP - "
+"FAQ\" target=\"_blank\">Más información en las FAQ de la extensión.</a>"
+
+#: includes/options.php:138
+msgid ""
+"This setting is being overridden by SAR_FSMTP_FROM_NAME constant set in your "
+"wp-config.php file."
+msgstr ""
+"Este ajuste está siendo anulado por  la constante SAR_FSMTP_FROM_NAME en tu "
+"archivo wp-config.php"
+
+#: includes/options.php:154
+msgid ""
+"This setting is being overridden by SAR_FSMTP_FROM constant set in your wp-"
+"config.php file."
+msgstr ""
+"Este ajuste está siendo anulado por  la constante SAR_FSMTP_FROM en tu "
+"archivo wp-config.php"
+
+#: includes/options.php:170
+msgid ""
+"This setting is being overridden by SAR_FSMTP_USER constant set in your wp-"
+"config.php file."
+msgstr ""
+"Este ajuste está siendo anulado por  la constante SAR_FSMTP_USER en tu "
+"archivo wp-config.php"
+
+#: includes/options.php:186
+msgid ""
+"This setting is being overridden by SAR_FSMTP_PASSWORD constant set in your "
+"wp-config.php file."
+msgstr ""
+"Este ajuste está siendo anulado por  la constante SAR_FSMTP_PASSWORD en tu "
+"archivo wp-config.php"
+
+#: includes/options.php:201
+msgid ""
+"This setting is being overridden by SAR_FSMTP_HOST constant set in your wp-"
+"config.php file."
+msgstr ""
+"Este ajuste está siendo anulado por  la constante SAR_FSMTP_HOST en tu "
+"archivo wp-config.php"
+
+#: includes/options.php:216
+msgid ""
+"This setting is being overridden by SAR_FSMTP_PORT constant set in your wp-"
+"config.php file."
+msgstr ""
+"Este ajuste está siendo anulado por  la constante SAR_FSMTP_PORT en tu "
+"archivo wp-config.php"
+
+#: includes/options.php:232
+msgid ""
+"This setting is being overridden by SAR_FSMTP_ENCRYPTION constant set in "
+"your wp-config.php file."
+msgstr ""
+"Este ajuste está siendo anulado por  la constante SAR_FSMTP_ENCRYPTION en tu "
+"archivo wp-config.php"
+
+#: includes/options.php:237
+msgid "None"
+msgstr "Ninguna"
+
+#: includes/options.php:238
+msgid "TLS"
+msgstr "TLS"
+
+#: includes/options.php:239
+msgid "SSL"
+msgstr "SSL"
+
+#: includes/options.php:252
+msgid "Off"
+msgstr "Desactivado"
+
+#: includes/options.php:253
+msgid "Error Log"
+msgstr "Registro de errores"
+
+#: includes/options.php:263
+msgid ""
+"These settings are <strong>required</strong>. Be sure to put the correct "
+"settings here or your mail send will fail. If you're not sure about what "
+"values you need to put in each field, contact your SMTP server support. "
+"After saving these settings you can test them from Tools -> Send Email Test."
+msgstr ""
+"Estos ajustes son <strong>obligatorios</strong>. Asegúrate de poner aquí los "
+"ajustes correctos o el envío de tu email fallará. Si no estás seguro de qué "
+"valores necesitas poner en cada campo, contacta con el soporte de tu "
+"servidor SMTP. Después de guardar estos ajustes puedes probarlos desde "
+"Herramientas -> Prueba envío email."
+
+#: includes/options.php:269
+msgid ""
+"These settings are optional and only used if no other plugin using wp_mail() "
+"set his own data for these fields. (E.g. If you use Gravity Forms, these "
+"settings <strong>will not replace</strong> your FROM name/address for "
+"notifications created in Form Settings -> Notifications). If you leave this "
+"blank and no other plugin is setting their own info, WordPress will use the "
+"default core settings for these fields."
+msgstr ""
+"Estos ajustes son opciones y sólo se usan si ninguna otra extensión que use "
+"wp_mail() establece sus propios datos para estos campos. (P.ej. Si usas "
+"Gravity Forms, estos ajustes <strong>no reemplazarán</strong> tu nombre/"
+"dirección del campo FROM para notificaciones creadas en Ajustes del "
+"formulario -> Notificaciones). Si dejas esto en blanco y ninguna otra "
+"extensión establece su propia información, WordPress usará los ajustes "
+"predeterminados para estos campos."
+
+#: includes/options.php:275
+msgid ""
+"These settings are optional too. Remember to turn off Debug Mode when you're "
+"done with the troubleshooting to avoid raising your server load by "
+"generating unnecessary logs."
+msgstr ""
+"Estos ajustes también son opcionales. Recuerda desactivar el modo depuración "
+"cuando hayas solucionado el problema para evitar aumentar la carga de tu "
+"servidor generando archivos de registros innecesarios."
