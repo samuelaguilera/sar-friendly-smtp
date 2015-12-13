@@ -152,7 +152,7 @@ This is useful if you want to use the same settings network-wide in a WordPress 
 
 == Upgrade Notice ==
 
-= 1.1.1 =
+= 1.1.3 =
 
 * NOTICE: If you're running a version below 1.1, it's recommended to update the plugin before upgrading to WP 4.4.x to prevent a possible fatal error
 
