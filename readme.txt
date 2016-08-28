@@ -3,7 +3,7 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E45TMW9JCPRW
 Tags: email, smtp, notifications, phpmailer, sendmail, gmail, mandrill, wp_mail
 Requires at least: 3.9.3
-Tested up to: 4.4
+Tested up to: 4.6
 Stable tag: 1.1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -20,7 +20,7 @@ So the history repeats again, I can't find one simple plugin that fits my needs,
 
 If you're happy with the plugin [please don't forget to give it a good rating](https://wordpress.org/support/view/plugin-reviews/sar-friendly-smtp?filter=5), it will motivate me to keep sharing and improving this plugin (and others).
 
-Starting from December 2015 support requests must be created using the [Issues tab at the Github repository](https://github.com/samuelaguilera/sar-friendly-smtp/issues)
+**IMPORTANT:** Support requests must be created using the [Issues tab at the Github repository](https://github.com/samuelaguilera/sar-friendly-smtp/issues)
 
 = Features =           
 
