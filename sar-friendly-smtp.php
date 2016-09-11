@@ -426,6 +426,10 @@ function sarfsmtp_debug_mode_setting_render( $args ) {
 
 function sarfsmtp_allow_invalid_ssl_setting_render( $args ) { 
 	global $sarfsmtp_options;
+
+	// prevent undefined index notice in update from 1.1.3 to 1.1.6
+	if ( ! array_key_exists( 'allow_invalid_ssl', $sarfsmtp_options ) ) { $sarfsmtp_options['allow_invalid_ssl'] = 'off'; }
+
 	if ( defined( 'SAR_FSMTP_ALLOW_INVALID_SSL' ) && is_string( SAR_FSMTP_ALLOW_INVALID_SSL ) ) {
 		echo '<div class="error" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_ALLOW_INVALID_SSL constant in your wp-config.php file.', 'sar-friendly-smtp' );
