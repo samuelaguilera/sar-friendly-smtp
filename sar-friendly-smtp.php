@@ -256,7 +256,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_allow_invalid_ssl_setting_render', 
 		'sarfsmtp_settings_page', 
 		'sarfsmtp_misc_settings_section',
-		array( __('Allow connecting to a server with invalid SSL setup. <a href="https://github.com/PHPMailer/PHPMailer/issues/270" title="SMTP connect() failed due to invalid SSL setup" target="_blank">More details at PHPMailer Github repository.</a>', 'sar-friendly-smtp' ) ) 
+		array( __('Allow connecting to a server with invalid SSL setup. Bear in mind this is only a workaround, the right thing would be to fix the server SSL setup. <a href="https://github.com/PHPMailer/PHPMailer/issues/270" title="SMTP connect() failed due to invalid SSL setup" target="_blank">More details at PHPMailer Github repository.</a>', 'sar-friendly-smtp' ) ) 
 	);
 
 }

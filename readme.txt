@@ -1,7 +1,7 @@
 === SAR Friendly SMTP ===
 Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E45TMW9JCPRW
-Tags: email, smtp, notifications, phpmailer, sendmail, gmail, mandrill, wp_mail
+Tags: email, smtp, notifications, phpmailer, sendmail, wp_mail
 Requires at least: 3.9.3
 Tested up to: 4.6.1
 Stable tag: 1.1.6
