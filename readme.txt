@@ -18,7 +18,7 @@ Most of them overwrites from address and from name fields ALWAYS, breaking funct
 
 So the history repeats again, I can't find one simple plugin that fits my needs, so I created one for myself and share it with you in the hope that you'll find it useful.
 
-If you're happy with the plugin [please don't forget to give it a good rating](https://wordpress.org/support/view/plugin-reviews/sar-friendly-smtp?filter=5), it will motivate me to keep sharing and improving this plugin (and others).
+If you're happy with the plugin [please don't forget to give it a good rating](https://wordpress.org/support/plugin/sar-friendly-smtp/reviews/?filter=5), it will motivate me to keep sharing and improving this plugin (and others).
 
 **IMPORTANT:** Support requests must be created using the [Issues tab at the Github repository](https://github.com/samuelaguilera/sar-friendly-smtp/issues)
 
