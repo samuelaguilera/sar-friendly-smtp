@@ -252,7 +252,7 @@ function sarfsmtp_settings_init(  ) {
 
 	add_settings_field( 
 		'allow_invalid_ssl', 
-		__( 'Allow invalid SSL', 'sar-friendly-smtp' ), 
+		__( 'Allow Invalid SSL', 'sar-friendly-smtp' ), 
 		'sarfsmtp_allow_invalid_ssl_setting_render', 
 		'sarfsmtp_settings_page', 
 		'sarfsmtp_misc_settings_section',
