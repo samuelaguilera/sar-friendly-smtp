@@ -4,7 +4,7 @@ Plugin Name: SAR Friendly SMTP
 Plugin URI: http://www.samuelaguilera.com
 Description: A friendly SMTP plugin for WordPress. No third-party, simply using WordPress native possibilities.
 Author: Samuel Aguilera
-Version: 1.1.3
+Version: 1.1.6
 Author URI: http://www.samuelaguilera.com
 License: GPL3
 */
@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Current plugin version, for now only used for XMailer setting
-define('SAR_FSMTP_VER', '1.1.3');
+define('SAR_FSMTP_VER', '1.1.6');
 
 // Add/Remove custom capability for settings access upon activation/deactivation
 register_activation_hook( __FILE__, 'sar_friendly_smtp_add_cap' );
@@ -103,9 +103,22 @@ function sar_friendly_smtp ($phpmailer) {
 	}
 
 	// Debug mode
-	if ( $sarfsmtp_options['debug_mode'] == 'error_log' ) {
+	if ( ( defined( 'SAR_FSMTP_DEBUG_MODE' ) && ( SAR_FSMTP_DEBUG_MODE == 'debug_log' ) ) || $sarfsmtp_options['debug_mode'] == 'error_log' ) {
 		$phpmailer->SMTPDebug = 2; // Adds commands and data between WordPress and your SMTP server
 		$phpmailer->Debugoutput = 'error_log'; // to PHP error_log file
+	}
+
+	// Allow invalid SSL https://github.com/PHPMailer/PHPMailer/issues/270
+	if ( ( defined( 'SAR_FSMTP_ALLOW_INVALID_SSL' ) && ( SAR_FSMTP_ALLOW_INVALID_SSL == 'on' ) ) || $sarfsmtp_options['allow_invalid_ssl'] == 'on' ) {
+		$phpmailer->smtpConnect(
+		    array(
+		        "ssl" => array(
+		            "verify_peer" => false,
+		            "verify_peer_name" => false,
+		            "allow_self_signed" => true
+		        )
+		    )
+		);
 	}
 
 }
@@ -235,6 +248,15 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_settings_page', 
 		'sarfsmtp_misc_settings_section',
 		array( __('Error Log option adds commands and data between WordPress and your SMTP server to PHP error_log file. <a href="https://wordpress.org/plugins/sar-friendly-smtp/faq/" title="SAR Friendly SMTP - FAQ" target="_blank">More information in the plugin\'s FAQ.</a>', 'sar-friendly-smtp' ) ) 
+	);
+
+	add_settings_field( 
+		'allow_invalid_ssl', 
+		__( 'Allow invalid SSL', 'sar-friendly-smtp' ), 
+		'sarfsmtp_allow_invalid_ssl_setting_render', 
+		'sarfsmtp_settings_page', 
+		'sarfsmtp_misc_settings_section',
+		array( __('Allow connecting to a server with invalid SSL setup. <a href="https://github.com/PHPMailer/PHPMailer/issues/270" title="SMTP connect() failed due to invalid SSL setup" target="_blank">More details at PHPMailer Github repository.</a>', 'sar-friendly-smtp' ) ) 
 	);
 
 }
@@ -382,6 +404,15 @@ function sarfsmtp_encryption_setting_render( $args ) {
 
 function sarfsmtp_debug_mode_setting_render( $args ) { 
 	global $sarfsmtp_options;
+	if ( defined( 'SAR_FSMTP_DEBUG_MODE' ) && is_string( SAR_FSMTP_DEBUG_MODE ) )  {
+		echo '<div class="error" >';
+		_e( 'This setting is being overridden by SAR_FSMTP_DEBUG_MODE constant set in your wp-config.php file.', 'sar-friendly-smtp' );
+		echo '</div>';	
+	// add current value in db as hidden input to prevent resetting the stored value
+	?>
+	<input type="hidden" name="sarfsmtp_settings[debug_mode]" value="<?php echo $sarfsmtp_options['debug_mode']; ?>">
+	<?php
+	} else {
 	?>
 	<select name="sarfsmtp_settings[debug_mode]">
 		<option value="off" <?php selected( $sarfsmtp_options['debug_mode'],'off' ); ?>><?php _e( 'Off', 'sar-friendly-smtp' ) ?></option>
@@ -389,9 +420,31 @@ function sarfsmtp_debug_mode_setting_render( $args ) {
 	</select>
 	<p class="description"><?php echo $args[0] ?></p>
 	<?php
+	}
 
 }
 
+function sarfsmtp_allow_invalid_ssl_setting_render( $args ) { 
+	global $sarfsmtp_options;
+	if ( defined( 'SAR_FSMTP_ALLOW_INVALID_SSL' ) && is_string( SAR_FSMTP_ALLOW_INVALID_SSL ) ) {
+		echo '<div class="error" >';
+		_e( 'This setting is being overridden by SAR_FSMTP_ALLOW_INVALID_SSL constant in your wp-config.php file.', 'sar-friendly-smtp' );
+		echo '</div>';	
+	// add current value in db as hidden input to prevent resetting the stored value
+	?>
+	<input type="hidden" name="sarfsmtp_settings[allow_invalid_ssl]" value="<?php echo $sarfsmtp_options['allow_invalid_ssl']; ?>">
+	<?php
+	} else {
+	?>
+	<select name="sarfsmtp_settings[allow_invalid_ssl]">
+		<option value="off" <?php selected( $sarfsmtp_options['allow_invalid_ssl'],'off' ); ?>><?php _e( 'Off', 'sar-friendly-smtp' ) ?></option>
+		<option value="on" <?php selected( $sarfsmtp_options['allow_invalid_ssl'], 'on' ); ?>><?php _e( 'On', 'sar-friendly-smtp' ) ?></option>
+	</select>
+	<p class="description"><?php echo $args[0] ?></p>
+	<?php
+	}
+
+}
 
 function sarfsmtp_server_details_section_callback(  ) { 
 

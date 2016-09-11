@@ -23,21 +23,27 @@ function sar_friendly_smtp_test_email() {
         $to = get_bloginfo('admin_email');
         $content = __( 'SAR Friendly SMTP - Send Email Test', 'sar-friendly-smtp' );
 
+
+    try{
         $mail_sent = wp_mail( $to, $content, $content );
 
-                if ( $mail_sent == true ) {
-                    echo '<div id="message" class="updated fade"><p>'.__( '<p>According to WordPress <strong>the email has been passed correctly to the SMTP server</strong>.<p>This means that <strong>now the SMTP server will process the email and send it or reject</strong> based on the server policies. If you don\'t receive the email, contact with your SMTP server support.</p>', 'sar-friendly-smtp' ).'</p></div>';
+        if ( $mail_sent == true ) {
+            echo '<div id="message" class="updated fade"><p>'.__( '<p>According to WordPress <strong>the email has been passed correctly to the SMTP server</strong>.<p>This means that <strong>now the SMTP server will process the email and send it or reject</strong> based on the server policies. If you don\'t receive the email, contact with your SMTP server support.</p>', 'sar-friendly-smtp' ).'</p></div>';
 
-                  } else {
-                    echo '<div id="message" class="error fade"><p>'.__( 'WordPress was not able to pass the email to the SMTP server.', 'sar-friendly-smtp' ).'</p>';
+        } else {
+            echo '<div id="message" class="error fade"><p>'.__( 'WordPress was not able to pass the email to the SMTP server.', 'sar-friendly-smtp' ).'</p>';
+               if ( !empty($phpmailer->ErrorInfo) ) {
+                    echo '<p>'.__( 'Error returned by PHPMailer class:', 'sar-friendly-smtp' ).' <strong>'.$phpmailer->ErrorInfo.'</strong></p></div>'; 
+               } else {
+                    echo '<p>'.__( 'No additional information has been provided by PHPMailer class. Try enabling Error Log in Debug Mode setting and checking your server logs.', 'sar-friendly-smtp' ).'</p></div>';
+               }
+       } 
 
-                    if ( !empty($phpmailer->ErrorInfo) ) {
-                    	echo '<p>'.__( 'Error returned by PHPMailer class:', 'sar-friendly-smtp' ).' <strong>'.$phpmailer->ErrorInfo.'</strong></p></div>';	
-                    } else {
-                    	echo '<p>'.__( 'No additional information has been provided by PHPMailer class. Try enabling Error Log in Debug Mode setting and checking your server logs.', 'sar-friendly-smtp' ).'</p></div>';
-                    }
+     } catch(Exception $e){ // In case of fatal error
+        echo '<div id="message" class="error fade"><p>'.__( 'WordPress was not able to pass the email to the SMTP server.', 'sar-friendly-smtp' ).'</p>';
+        echo '<p>'.__( 'Fatal Error returned by PHPMailer class:', 'sar-friendly-smtp' ).' <strong>'.$e->getMessage().'</strong></p></div>';
+     }
 
-                 }
     }	
 
 // Form
