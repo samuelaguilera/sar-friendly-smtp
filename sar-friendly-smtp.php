@@ -74,7 +74,7 @@ function sar_friendly_smtp ($phpmailer) {
 	global $sarfsmtp_options;
 
 	// If server name or password are empty, don't touch anything!
-	if ( empty( $sarfsmtp_options['smtp_server'] ) || empty( $sarfsmtp_options['password'] ) ) { return; }
+	if ( ( !defined( 'SAR_FSMTP_HOST' ) && empty( $sarfsmtp_options['smtp_server'] ) ) || ( !defined( 'SAR_FSMTP_PASSWORD' ) &&  empty( $sarfsmtp_options['password'] ) ) ) { return; }
 
 	$phpmailer->IsSMTP(); // Set PHPMailer to use SMTP
 	$phpmailer->SMTPAuth = true; // Always use authentication. I don't support open relays!
