@@ -80,7 +80,7 @@ function sar_friendly_smtp ($phpmailer) {
 	$phpmailer->SMTPAuth = true; // Always use authentication. I don't support open relays!
 
 	// Override saved settings if constants are set in wp-config.php file
-	( defined( 'SAR_FSMTP_PORT' ) && is_string( SAR_FSMTP_USER ) ) ? $phpmailer->Username = SAR_FSMTP_USER : $phpmailer->Username = $sarfsmtp_options['username'];
+	( defined( 'SAR_FSMTP_USER' ) && is_string( SAR_FSMTP_USER ) ) ? $phpmailer->Username = SAR_FSMTP_USER : $phpmailer->Username = $sarfsmtp_options['username'];
 	( defined( 'SAR_FSMTP_PASSWORD' ) && is_string( SAR_FSMTP_PASSWORD ) ) ? $phpmailer->Password = SAR_FSMTP_PASSWORD : $phpmailer->Password = $sarfsmtp_options['password'];
 	( defined( 'SAR_FSMTP_HOST' ) && is_string( SAR_FSMTP_HOST ) ) ? $phpmailer->Host = SAR_FSMTP_HOST : $phpmailer->Host = $sarfsmtp_options['smtp_server'];
 	// IMPORTANT! Don't use quotes for the SAR_FSMTP_PORT value or the check will fail and the port will be not used
