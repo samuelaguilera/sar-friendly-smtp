@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: email, smtp, notifications, phpmailer, sendmail, wp_mail
 Requires at least: 3.9.3
 Tested up to: 4.6.1
-Stable tag: 1.1.6
+Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -115,20 +115,25 @@ define( 'SAR_FSMTP_ENCRYPTION', 'tls' );
 define( 'SAR_FSMTP_FROM', 'you@example.com' );
 define( 'SAR_FSMTP_FROM_NAME', 'Your Name' );`
 
-In 1.1.6 the following constants are added too:
+In 1.2 the following constants are added too:
 
-`define( 'SAR_FSMTP_DEBUG_MODE', 'debug_log' );
+`define( 'SAR_FSMTP_DEBUG_MODE', 'error_log' );
 define( 'SAR_FSMTP_ALLOW_INVALID_SSL', 'on' );`
 
 This is useful if you want to use the same settings network-wide in a WordPress network (multisite installation).
 
 == Changelog ==
 
-= 1.1.6 =
+= 1.2 =
 
 * Added handling of fatal errors in Send Email Test page.
 * Added setting to allow the use of SMTP servers with invalid SSL setup. [More information](https://github.com/PHPMailer/PHPMailer/issues/270)
 * Added SAR_FSMTP_DEBUG_MODE and SAR_FSMTP_ALLOW_INVALID_SSL constants, check FAQ for more details.
+* Migrated settings to single keys for easy handling of settings on upgrades.
+* Allow function sar_friendly_smtp() to run when settings are set in wp-config.php file and database doesn't has any setting saved. Thanks to friscoMad.
+* Fixed checking of SAR_FSMTP_USER in sar_friendly_smtp() function. Thanks to friscoMad.
+* Moved settings and test page to a new SAR Friendly SMTP menu.
+* Reorganized settings using tabs.
 
 
 = 1.1.3 =

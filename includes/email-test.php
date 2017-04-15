@@ -2,25 +2,19 @@
 
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
-add_action('admin_menu', 'sar_friendly_smtp_add_tool_page');
-
-function sar_friendly_smtp_add_tool_page(){
-add_management_page( __( 'Send Email Test', 'sar-friendly-smtp' ), __( 'Send Email Test', 'sar-friendly-smtp' ),'sar_fsmtp_options', __FILE__, 'sar_friendly_smtp_test_email');
-}
-
 function sar_friendly_smtp_test_email() {
 
 	global $phpmailer;
 
-	$sar_test_email_nonce = wp_create_nonce('sarfsmtp_nonce');
+	$sar_test_email_nonce = wp_create_nonce( 'sarfsmtp_nonce' );
 
-    if ( isset($_POST['sarfsmtp_test']) ) {
+    if ( isset( $_POST['sarfsmtp_test'] ) ) {
 
-		if ( !wp_verify_nonce( $_POST['sarfsmtp_nonce'],'sarfsmtp_nonce' ) ) {
+		if ( !wp_verify_nonce( $_POST['sarfsmtp_nonce'], 'sarfsmtp_nonce' ) ) {
 			wp_die('Security check not passed!');
 		}
 
-        $to = get_bloginfo('admin_email');
+        $to = get_bloginfo( 'admin_email' );
         $content = __( 'SAR Friendly SMTP - Send Email Test', 'sar-friendly-smtp' );
 
 
