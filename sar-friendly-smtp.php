@@ -93,12 +93,12 @@ function sar_friendly_smtp ($phpmailer) {
 	$wp_email_start = substr( $phpmailer->From, 0, 9 );	
 
 	// Replace From only when default value and FROM Address setting are set
-	if ( $wp_email_start === 'wordpress' && ( defined( 'SAR_FSMTP_FROM' ) || !empty( $sarfsmtp_options['from_address'] ) ) ) { 
+	if ( ( defined( 'SAR_FSMTP_FORCE_FROM' ) && defined( 'SAR_FSMTP_FROM' ) ) || ( $wp_email_start === 'wordpress' && ( defined( 'SAR_FSMTP_FROM' ) || !empty( $sarfsmtp_options['from_address'] ) ) ) ) { 
 		( defined( 'SAR_FSMTP_FROM' ) && is_email( SAR_FSMTP_FROM ) ) ? $phpmailer->From = SAR_FSMTP_FROM : $phpmailer->From = $sarfsmtp_options['from_address'];		
 	}
 
 	// Replace FromName only when default value and FROM Name setting are set
-	if ( $phpmailer->FromName === 'WordPress' && ( defined( 'SAR_FSMTP_FROM_NAME' ) || !empty( $sarfsmtp_options['from_name'] ) ) ) {
+	if ( ( defined( 'SAR_FSMTP_FORCE_FROM' ) && defined( 'SAR_FSMTP_FROM_NAME' ) ) || ( $phpmailer->FromName === 'WordPress' && ( defined( 'SAR_FSMTP_FROM_NAME' ) || !empty( $sarfsmtp_options['from_name'] ) ) ) ) {
 		( defined( 'SAR_FSMTP_FROM_NAME' ) && is_string( SAR_FSMTP_FROM_NAME ) ) ? $phpmailer->FromName = SAR_FSMTP_FROM_NAME : $phpmailer->FromName = $sarfsmtp_options['from_name'];		
 	}
 
