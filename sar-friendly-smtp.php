@@ -63,8 +63,8 @@ require('includes/email-test.php');
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'sarfsmtp_action_links' );
 
 function sarfsmtp_action_links( $links ) {
-   $links[] = '<a href="'. esc_url( get_admin_url(null, 'admin.php?page=sar_friendly_smtp') ) .'">Settings</a>';
-   $links[] = '<a href="'. esc_url( get_admin_url(null, 'admin.php?page=sar-friendly-smtp%2Fsar-friendly-smtp.php') ) .'">Send Email Test</a>';
+   $links[] = '<a href="'. esc_url( get_admin_url( null, 'admin.php?page=sar_friendly_smtp' ) ) .'">Settings</a>';
+   $links[] = '<a href="'. esc_url( get_admin_url( null, 'admin.php?page=sar_fsmtp_email_test' ) ) .'">Send Email Test</a>';
    return $links;
 }
 
@@ -138,7 +138,7 @@ function sarfsmtp_add_admin_menu(  ) {
 
 	add_menu_page( 'SAR Friendly SMTP', 'SAR Friendly SMTP', 'sar_fsmtp_options', 'sar_friendly_smtp', 'sar_friendly_smtp_options_page', 'dashicons-email-alt', '80' );
 	add_submenu_page( 'sar_friendly_smtp', __( 'Settings', 'sar-friendly-smtp' ), __( 'Settings', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_friendly_smtp' );
-	add_submenu_page( 'sar_friendly_smtp', __( 'Send Email Test', 'sar-friendly-smtp' ), __( 'Send Email Test', 'sar-friendly-smtp' ), 'sar_fsmtp_options', __FILE__, 'sar_friendly_smtp_test_email');
+	add_submenu_page( 'sar_friendly_smtp', __( 'Send Email Test', 'sar-friendly-smtp' ), __( 'Send Email Test', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_fsmtp_email_test', 'sar_friendly_smtp_test_email');
 }
 
 function sarfsmtp_settings_init(  ) { 
@@ -470,7 +470,7 @@ function sarfsmtp_allow_invalid_ssl_setting_render( $args ) {
 
 function sarfsmtp_server_details_section_callback(  ) { 
 
-	echo __( 'These settings are <strong>required</strong>. Be sure to put the correct settings here or your mail send will fail. If you\'re not sure about what values you need to put in each field, contact your SMTP server support. After saving these settings you can test them from SAR Friendly SMTP -> Send Email Test.', 'sar-friendly-smtp' );
+	echo __( 'These settings are <strong>required</strong>. Be sure to put the correct settings here or your mail send will fail. If you\'re not sure about what values you need to put in each field, contact your SMTP server support. After saving these settings you can test them in <a href="' . esc_url( get_admin_url( null, 'admin.php?page=sar_fsmtp_email_test' ) ) . '">Send Email Test</a> page.', 'sar-friendly-smtp' );
 
 }
 
@@ -496,7 +496,7 @@ function sar_friendly_smtp_options_page(  ) {
     <div class="wrap">
      
         <h2>SAR Friendly SMTP Settings</h2>
-        <?php settings_errors(); ?>
+
 		<?php
 		$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'smtp_server';
 		?>         
