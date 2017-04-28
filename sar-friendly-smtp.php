@@ -251,7 +251,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_debug_mode_setting_render', 
 		'sarfsmtp_settings_misc_page', 
 		'sarfsmtp_misc_settings_section',
-		array( __('Error Log option adds commands and data between WordPress and your SMTP server to PHP error_log file. <a href="https://wordpress.org/plugins/sar-friendly-smtp/faq/" title="SAR Friendly SMTP - FAQ" target="_blank">More information in the plugin\'s FAQ.</a>', 'sar-friendly-smtp' ) ) 
+		array( sprintf( wp_kses( __( 'Error Log option adds commands and data between WordPress and your SMTP server to PHP error_log file. %sMore information in the plugin\'s FAQ%s.', 'sar-friendly-smtp' ), array() ), '<a href="https://wordpress.org/plugins/sar-friendly-smtp/faq/" title="SAR Friendly SMTP - FAQ" target="_blank">', '</a>' ) ) 
 	);
 
 	add_settings_field( 
@@ -260,7 +260,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_allow_invalid_ssl_setting_render', 
 		'sarfsmtp_settings_misc_page', 
 		'sarfsmtp_misc_settings_section',
-		array( __('Allow connecting to a server with invalid SSL setup. Bear in mind this is only a workaround, the right thing would be to fix the server SSL setup. <a href="https://github.com/PHPMailer/PHPMailer/issues/270" title="SMTP connect() failed due to invalid SSL setup" target="_blank">More details at PHPMailer Github repository.</a>', 'sar-friendly-smtp' ) ) 
+		array( sprintf( wp_kses( __( 'Allow connecting to a server with invalid SSL setup. Bear in mind this is only a workaround, the right thing would be to fix the server SSL setup. %sMore details at PHPMailer Github repository%s.', 'sar-friendly-smtp' ), array() ), '<a href="https://github.com/PHPMailer/PHPMailer/issues/270" title="SMTP connect() failed due to invalid SSL setup" target="_blank">', '</a>' ) ) 
 	);
 
 }
@@ -469,21 +469,19 @@ function sarfsmtp_allow_invalid_ssl_setting_render( $args ) {
 }
 
 function sarfsmtp_server_details_section_callback(  ) { 
-
-	echo __( 'These settings are <strong>required</strong>. Be sure to put the correct settings here or your mail send will fail. If you\'re not sure about what values you need to put in each field, contact your SMTP server support. After saving these settings you can test them in <a href="' . esc_url( get_admin_url( null, 'admin.php?page=sar_fsmtp_email_test' ) ) . '">Send Email Test</a> page.', 'sar-friendly-smtp' );
-
+	$url = esc_url( get_admin_url( null, 'admin.php?page=sar_fsmtp_email_test' ) );
+	$text = sprintf( wp_kses( __( 'These settings are %srequired%s. Be sure to put the correct settings here or your mail send will fail. If you\'re not sure about what values you need to put in each field, contact your SMTP server support. After saving these settings you can test them in %sSend Email Test%s page.', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>', "<a href='$url'>", '</a>' );
+	echo $text;
 }
 
 function sarfsmtp_optional_fields_section(  ) { 
-
-	echo __( 'These settings are <strong>optional</strong> and only used if no other plugin using wp_mail() set its own data for these fields. (E.g. If you use Gravity Forms, these settings <strong>will not replace</strong> your FROM name/address for notifications created in Form Settings -> Notifications). If you leave this blank and no other plugin is setting their own info, WordPress will use the default core settings for these fields.', 'sar-friendly-smtp' );
-
+	$text = sprintf( wp_kses( __( 'These settings are %1$soptional%2$s and only used if no other plugin using wp_mail() set its own data for these fields. (E.g. If you use Gravity Forms, these settings %1$swill not replace%2$s your FROM name/address for notifications created in Form Settings -> Notifications). If you leave this blank and no other plugin is setting their own info, WordPress will use the default core settings for these fields.', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>' );
+	echo $text;
 }
 
 function sarfsmtp_misc_settings_section(  ) { 
-
-	echo __( 'These settings are <strong>optional</strong> too. Remember to turn off Debug Mode when you\'re done with the troubleshooting to avoid raising your server load by generating unnecessary logs.' , 'sar-friendly-smtp' );
-
+	$text = sprintf( wp_kses( __( 'These settings are %1$soptional%2$s too. Remember to turn off Debug Mode when you\'re done with the troubleshooting to avoid raising your server load by generating unnecessary logs.', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>' );
+	echo $text;
 }
 
 function sar_friendly_smtp_options_page(  ) { 
@@ -491,21 +489,18 @@ function sar_friendly_smtp_options_page(  ) {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
 	?>
-
     <!-- Create a header in the default WordPress 'wrap' container -->
-    <div class="wrap">
-     
-        <h2>SAR Friendly SMTP Settings</h2>
+    <div class="wrap"> 
+        <h2><?php _e( 'SAR Friendly SMTP Settings', 'sar-friendly-smtp' ); ?></h2>
 
 		<?php
 		$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'smtp_server';
 		?>         
         <h2 class="nav-tab-wrapper">
-            <a href="?page=sar_friendly_smtp&tab=smtp_server" class="nav-tab <?php echo $active_tab == 'smtp_server' ? 'nav-tab-active' : ''; ?>">SMTP Server details</a>
-            <a href="?page=sar_friendly_smtp&tab=from_field" class="nav-tab <?php echo $active_tab == 'from_field' ? 'nav-tab-active' : ''; ?>">FROM Field Settings</a>
-			<a href="?page=sar_friendly_smtp&tab=miscellaneous" class="nav-tab <?php echo $active_tab == 'miscellaneous' ? 'nav-tab-active' : ''; ?>">Miscellaneous Settings</a>
+            <a href="?page=sar_friendly_smtp&tab=smtp_server" class="nav-tab <?php echo $active_tab == 'smtp_server' ? 'nav-tab-active' : ''; ?>"><?php _e( 'SMTP Server details', 'sar-friendly-smtp' ); ?></a>
+            <a href="?page=sar_friendly_smtp&tab=from_field" class="nav-tab <?php echo $active_tab == 'from_field' ? 'nav-tab-active' : ''; ?>"><?php _e( 'FROM Field Settings', 'sar-friendly-smtp' ); ?></a>
+			<a href="?page=sar_friendly_smtp&tab=miscellaneous" class="nav-tab <?php echo $active_tab == 'miscellaneous' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Miscellaneous Settings', 'sar-friendly-smtp' ); ?></a>
         </h2>
-
 	<form action='options.php' method='post'>		
 		<?php
 
@@ -524,7 +519,6 @@ function sar_friendly_smtp_options_page(  ) {
 		?>	
 	</form>
 	<?php
-
 }
 
 function sarfsmtp_maybe_upgrade_settings(){

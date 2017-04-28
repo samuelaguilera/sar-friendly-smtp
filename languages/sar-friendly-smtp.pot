@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sar-friendly-smtp\n"
-"POT-Creation-Date: 2015-12-07 19:30+0100\n"
-"PO-Revision-Date: 2015-12-07 19:30+0100\n"
+"POT-Creation-Date: 2017-04-29 01:01+0200\n"
+"PO-Revision-Date: 2017-04-29 01:01+0200\n"
 "Last-Translator: Samuel Aguilera <samuel@rocketgenius.com>\n"
 "Language-Team: Samuel Aguilera <correo@samuelguilera.com>\n"
 "Language: en_US\n"
@@ -17,225 +17,272 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/email-test.php:8 includes/email-test.php:48
-#: includes/email-test.php:55
-msgid "Send Email Test"
-msgstr ""
-
-#: includes/email-test.php:24
+#: includes/email-test.php:18
 msgid "SAR Friendly SMTP - Send Email Test"
 msgstr ""
 
-#: includes/email-test.php:29
+#: includes/email-test.php:26
+#, php-format
 msgid ""
-"<p>According to WordPress <strong>the email has been passed correctly to the "
-"SMTP server</strong>.<p>This means that <strong>now the SMTP server will "
-"process the email and send it or reject</strong> based on the server "
-"policies. If you don't receive the email, contact with your SMTP server "
-"support.</p>"
+"%3$sAccording to WordPress %1$sthe email has been passed correctly to the "
+"SMTP server%2$s.%4$s%3$sThis means that %1$snow the SMTP server will process "
+"the email and send it or reject%2$s based on the server policies. If you "
+"don't receive the email, contact with your SMTP server support.%4$s"
 msgstr ""
 
-#: includes/email-test.php:32
+#: includes/email-test.php:33 includes/email-test.php:54
 msgid "WordPress was not able to pass the email to the SMTP server."
 msgstr ""
 
-#: includes/email-test.php:35
+#: includes/email-test.php:39
 msgid "Error returned by PHPMailer class:"
 msgstr ""
 
-#: includes/email-test.php:37
+#: includes/email-test.php:45
 msgid ""
 "No additional information has been provided by PHPMailer class. Try enabling "
 "Error Log in Debug Mode setting and checking your server logs."
 msgstr ""
 
-#: includes/email-test.php:47
+#: includes/email-test.php:58
+msgid "Fatal Error returned by PHPMailer class:"
+msgstr ""
+
+#: includes/email-test.php:68
 msgid "SAR Friendly SMTP"
 msgstr ""
 
-#: includes/email-test.php:50
-msgid ""
-"<p>From this screen you can try to send an email to the WordPress admin "
-"email in <strong>Settings -> General -> E-mail Address</strong> to see if "
-"your SMTP settings are correct.</p><p>Simply click the button below.</p>"
+#: includes/email-test.php:69 includes/email-test.php:77
+#: sar-friendly-smtp.php:141
+msgid "Send Email Test"
 msgstr ""
 
-#: includes/options.php:33
+#: includes/email-test.php:71
+#, php-format
+msgid ""
+"%3$sFrom this screen you can try to send an email to the WordPress admin "
+"email in %1$sSettings -> General -> E-mail Address%2$s to see if your SMTP "
+"settings are correct.%4$s%3$sSimply click the button below.%4$s"
+msgstr ""
+
+#: sar-friendly-smtp.php:140
+msgid "Settings"
+msgstr ""
+
+#: sar-friendly-smtp.php:159 sar-friendly-smtp.php:500
 msgid "SMTP Server details"
 msgstr ""
 
-#: includes/options.php:40
+#: sar-friendly-smtp.php:166
 msgid "Username"
 msgstr ""
 
-#: includes/options.php:45
+#: sar-friendly-smtp.php:171
 msgid ""
-"Most SMTP servers (i.e. Gmail/Google Apps) requires your full email address "
+"Most SMTP servers (e.g. Gmail/Google Apps) requires your full email address "
 "as username."
 msgstr ""
 
-#: includes/options.php:50
+#: sar-friendly-smtp.php:176
 #, fuzzy
 msgid "Password"
 msgstr "Heslo"
 
-#: includes/options.php:59
+#: sar-friendly-smtp.php:185
 msgid "SMTP Server"
 msgstr ""
 
-#: includes/options.php:63
+#: sar-friendly-smtp.php:189
 msgid "Hostname of your SMTP server (e.g. smtp.gmail.com)."
 msgstr ""
 
-#: includes/options.php:68
+#: sar-friendly-smtp.php:194
 msgid "Port"
 msgstr ""
 
-#: includes/options.php:72
+#: sar-friendly-smtp.php:198
 msgid ""
 "If your server uses encryption, this should be 587 or 465 (e.g. Gmail and "
 "Mandrill uses 587). If not, standard non encrypted port is 25."
 msgstr ""
 
-#: includes/options.php:77
+#: sar-friendly-smtp.php:203
 msgid "Encryption"
 msgstr ""
 
-#: includes/options.php:81
+#: sar-friendly-smtp.php:207
 msgid ""
 "When using ecryption, most common setting is TLS. (e.g. Gmail and Mandrill "
 "uses TLS)."
 msgstr ""
 
-#: includes/options.php:89
-msgid "FROM Field Settings (Optional)"
+#: sar-friendly-smtp.php:215 sar-friendly-smtp.php:501
+msgid "FROM Field Settings"
 msgstr ""
 
-#: includes/options.php:96
+#: sar-friendly-smtp.php:222
 #, fuzzy
 msgid "FROM Name"
 msgstr "Od mena"
 
-#: includes/options.php:100
+#: sar-friendly-smtp.php:226
 msgid ""
 "Name for the email FROM field. Only used if the original email uses your "
 "Site Title from Settings -> General."
 msgstr ""
 
-#: includes/options.php:106
+#: sar-friendly-smtp.php:232
 msgid "FROM Address"
 msgstr ""
 
-#: includes/options.php:110
+#: sar-friendly-smtp.php:236
 msgid ""
 "Email address for the email FROM field. Only used if the outgoing original "
 "message uses default value: wordpress@yourdomain.com"
 msgstr ""
 
-#: includes/options.php:117
+#: sar-friendly-smtp.php:243 sar-friendly-smtp.php:502
 msgid "Miscellaneous Settings"
 msgstr ""
 
-#: includes/options.php:124
+#: sar-friendly-smtp.php:250
 msgid "Debug Mode"
 msgstr ""
 
-#: includes/options.php:128
+#: sar-friendly-smtp.php:254
+#, php-format
 msgid ""
 "Error Log option adds commands and data between WordPress and your SMTP "
-"server to PHP error_log file. <a href=\"https://wordpress.org/plugins/sar-"
-"friendly-smtp/faq/\" title=\"SAR Friendly SMTP - FAQ\" target=\"_blank"
-"\">More information in the plugin's FAQ.</a>"
+"server to PHP error_log file. %sMore information in the plugin's FAQ%s."
 msgstr ""
 
-#: includes/options.php:138
+#: sar-friendly-smtp.php:259
+msgid "Allow Invalid SSL"
+msgstr ""
+
+#: sar-friendly-smtp.php:263
+#, php-format
+msgid ""
+"Allow connecting to a server with invalid SSL setup. Bear in mind this is "
+"only a workaround, the right thing would be to fix the server SSL setup. "
+"%sMore details at PHPMailer Github repository%s."
+msgstr ""
+
+#: sar-friendly-smtp.php:275
 msgid ""
 "This setting is being overridden by SAR_FSMTP_FROM_NAME constant set in your "
 "wp-config.php file."
 msgstr ""
 
-#: includes/options.php:154
+#: sar-friendly-smtp.php:296
 msgid ""
 "This setting is being overridden by SAR_FSMTP_FROM constant set in your wp-"
 "config.php file."
 msgstr ""
 
-#: includes/options.php:170
+#: sar-friendly-smtp.php:317
 msgid ""
 "This setting is being overridden by SAR_FSMTP_USER constant set in your wp-"
 "config.php file."
 msgstr ""
 
-#: includes/options.php:186
+#: sar-friendly-smtp.php:339
 msgid ""
 "This setting is being overridden by SAR_FSMTP_PASSWORD constant set in your "
 "wp-config.php file."
 msgstr ""
 
-#: includes/options.php:201
+#: sar-friendly-smtp.php:360
 msgid ""
 "This setting is being overridden by SAR_FSMTP_HOST constant set in your wp-"
 "config.php file."
 msgstr ""
 
-#: includes/options.php:216
+#: sar-friendly-smtp.php:381
 msgid ""
 "This setting is being overridden by SAR_FSMTP_PORT constant set in your wp-"
 "config.php file."
 msgstr ""
 
-#: includes/options.php:232
+#: sar-friendly-smtp.php:403
 msgid ""
 "This setting is being overridden by SAR_FSMTP_ENCRYPTION constant set in "
 "your wp-config.php file."
 msgstr ""
 
-#: includes/options.php:237
+#: sar-friendly-smtp.php:412
 #, fuzzy
 msgid "None"
 msgstr "Žiadne"
 
-#: includes/options.php:238
+#: sar-friendly-smtp.php:413
 msgid "TLS"
 msgstr ""
 
-#: includes/options.php:239
+#: sar-friendly-smtp.php:414
 msgid "SSL"
 msgstr ""
 
-#: includes/options.php:252
+#: sar-friendly-smtp.php:429
+msgid ""
+"This setting is being overridden by SAR_FSMTP_DEBUG_MODE constant set in "
+"your wp-config.php file."
+msgstr ""
+
+#: sar-friendly-smtp.php:438 sar-friendly-smtp.php:462
 #, fuzzy
 msgid "Off"
 msgstr "Desactivado"
 
-#: includes/options.php:253
+#: sar-friendly-smtp.php:439
 msgid "Error Log"
 msgstr ""
 
-#: includes/options.php:263
+#: sar-friendly-smtp.php:453
 msgid ""
-"These settings are <strong>required</strong>. Be sure to put the correct "
-"settings here or your mail send will fail. If you're not sure about what "
-"values you need to put in each field, contact your SMTP server support. "
-"After saving these settings you can test them from Tools -> Send Email Test."
+"This setting is being overridden by SAR_FSMTP_ALLOW_INVALID_SSL constant in "
+"your wp-config.php file."
 msgstr ""
 
-#: includes/options.php:269
+#: sar-friendly-smtp.php:463
+msgid "On"
+msgstr ""
+
+#: sar-friendly-smtp.php:473
+#, php-format
 msgid ""
-"These settings are optional and only used if no other plugin using wp_mail() "
-"set his own data for these fields. (E.g. If you use Gravity Forms, these "
-"settings <strong>will not replace</strong> your FROM name/address for "
+"These settings are %srequired%s. Be sure to put the correct settings here or "
+"your mail send will fail. If you're not sure about what values you need to "
+"put in each field, contact your SMTP server support. After saving these "
+"settings you can test them in %sSend Email Test%s page."
+msgstr ""
+
+#: sar-friendly-smtp.php:478
+#, php-format
+msgid ""
+"These settings are %1$soptional%2$s and only used if no other plugin using "
+"wp_mail() set its own data for these fields. (E.g. If you use Gravity Forms, "
+"these settings %1$swill not replace%2$s your FROM name/address for "
 "notifications created in Form Settings -> Notifications). If you leave this "
 "blank and no other plugin is setting their own info, WordPress will use the "
 "default core settings for these fields."
 msgstr ""
 
-#: includes/options.php:275
+#: sar-friendly-smtp.php:483
+#, php-format
 msgid ""
-"These settings are optional too. Remember to turn off Debug Mode when you're "
-"done with the troubleshooting to avoid raising your server load by "
-"generating unnecessary logs."
+"These settings are %1$soptional%2$s too. Remember to turn off Debug Mode "
+"when you're done with the troubleshooting to avoid raising your server load "
+"by generating unnecessary logs."
+msgstr ""
+
+#: sar-friendly-smtp.php:489
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: sar-friendly-smtp.php:494
+msgid "SAR Friendly SMTP Settings"
 msgstr ""

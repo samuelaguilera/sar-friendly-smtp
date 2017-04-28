@@ -135,6 +135,7 @@ This is useful if you want to use the same settings network-wide in a WordPress 
 * Moved settings and test page to a new SAR Friendly SMTP menu.
 * Reorganized settings using tabs.
 * Added wp_filter_nohtml_kses as sanitize callback for all settings inputs.
+* Updated translation .pot and Spanish (es_ES) translation.
 
 
 = 1.1.3 =
