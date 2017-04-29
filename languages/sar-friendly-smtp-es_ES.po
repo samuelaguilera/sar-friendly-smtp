@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sar-friendly-smtp\n"
-"POT-Creation-Date: 2017-04-29 01:00+0200\n"
-"PO-Revision-Date: 2017-04-29 01:00+0200\n"
+"POT-Creation-Date: 2017-04-29 11:27+0200\n"
+"PO-Revision-Date: 2017-04-29 11:27+0200\n"
 "Last-Translator: Samuel Aguilera <samuel@rocketgenius.com>\n"
 "Language-Team: Samuel Aguilera <correo@samuelguilera.com>\n"
 "Language: es_ES\n"
@@ -63,7 +63,7 @@ msgid "SAR Friendly SMTP"
 msgstr "SAR Friendly SMTP"
 
 #: includes/email-test.php:69 includes/email-test.php:77
-#: sar-friendly-smtp.php:141
+#: sar-friendly-smtp.php:68 sar-friendly-smtp.php:142
 msgid "Send Email Test"
 msgstr "Prueba envío email"
 
@@ -79,19 +79,19 @@ msgstr ""
 "de e-mail%2$s para ver si los ajustes SMTP son correctos.%4$s%3$sSimplemente "
 "haz clic en el botón a continuación.%4$s"
 
-#: sar-friendly-smtp.php:140
+#: sar-friendly-smtp.php:67 sar-friendly-smtp.php:141
 msgid "Settings"
 msgstr "Ajustes"
 
-#: sar-friendly-smtp.php:159 sar-friendly-smtp.php:500
+#: sar-friendly-smtp.php:160 sar-friendly-smtp.php:501
 msgid "SMTP Server details"
 msgstr "Datos del servidor SMTP"
 
-#: sar-friendly-smtp.php:166
+#: sar-friendly-smtp.php:167
 msgid "Username"
 msgstr "Usuario"
 
-#: sar-friendly-smtp.php:171
+#: sar-friendly-smtp.php:172
 msgid ""
 "Most SMTP servers (e.g. Gmail/Google Apps) requires your full email address "
 "as username."
@@ -99,23 +99,23 @@ msgstr ""
 "La mayoría de servidores SMTP (p.ej. Gmail/Google Apps) necesitan tu "
 "dirección de email completa como nombre de usuario."
 
-#: sar-friendly-smtp.php:176
+#: sar-friendly-smtp.php:177
 msgid "Password"
 msgstr "Contraseña"
 
-#: sar-friendly-smtp.php:185
+#: sar-friendly-smtp.php:186
 msgid "SMTP Server"
 msgstr "Servidor SMTP"
 
-#: sar-friendly-smtp.php:189
+#: sar-friendly-smtp.php:190
 msgid "Hostname of your SMTP server (e.g. smtp.gmail.com)."
 msgstr "Nombre de tu servidor SMTP (p.ej. smtp.gmail.com)."
 
-#: sar-friendly-smtp.php:194
+#: sar-friendly-smtp.php:195
 msgid "Port"
 msgstr "Puerto"
 
-#: sar-friendly-smtp.php:198
+#: sar-friendly-smtp.php:199
 msgid ""
 "If your server uses encryption, this should be 587 or 465 (e.g. Gmail and "
 "Mandrill uses 587). If not, standard non encrypted port is 25."
@@ -123,11 +123,11 @@ msgstr ""
 "Si tu servidor usa encriptación, esto debería ser 587 o 465 (p.ej. Gmail and "
 "Mandrill uses 587). Sino, el puerto estándar sin encriptación es el 25."
 
-#: sar-friendly-smtp.php:203
+#: sar-friendly-smtp.php:204
 msgid "Encryption"
 msgstr "Encriptación"
 
-#: sar-friendly-smtp.php:207
+#: sar-friendly-smtp.php:208
 msgid ""
 "When using ecryption, most common setting is TLS. (e.g. Gmail and Mandrill "
 "uses TLS)."
@@ -135,15 +135,15 @@ msgstr ""
 "Cuando se usa encriptación el ajuste más utilizado habitualmente es TLS. (p."
 "ej. Gmail y Mandrill usan TLS)."
 
-#: sar-friendly-smtp.php:215 sar-friendly-smtp.php:501
+#: sar-friendly-smtp.php:216 sar-friendly-smtp.php:502
 msgid "FROM Field Settings"
 msgstr "Ajustes del campo FROM"
 
-#: sar-friendly-smtp.php:222
+#: sar-friendly-smtp.php:223
 msgid "FROM Name"
 msgstr "Nombre FROM"
 
-#: sar-friendly-smtp.php:226
+#: sar-friendly-smtp.php:227
 msgid ""
 "Name for the email FROM field. Only used if the original email uses your "
 "Site Title from Settings -> General."
@@ -151,11 +151,11 @@ msgstr ""
 "Nombre para el campo FROM. Sólo se usa si el email original usa el título de "
 "tu sitio web configurado en Ajustes -> General."
 
-#: sar-friendly-smtp.php:232
+#: sar-friendly-smtp.php:233
 msgid "FROM Address"
 msgstr "Dirección FROM"
 
-#: sar-friendly-smtp.php:236
+#: sar-friendly-smtp.php:237
 msgid ""
 "Email address for the email FROM field. Only used if the outgoing original "
 "message uses default value: wordpress@yourdomain.com"
@@ -163,29 +163,29 @@ msgstr ""
 "Dirección de email para el campo FROM. Sólo se usa si el email original usa "
 "el valor predeterminado: wordpress@ejemplo.com"
 
-#: sar-friendly-smtp.php:243 sar-friendly-smtp.php:502
+#: sar-friendly-smtp.php:244 sar-friendly-smtp.php:503
 msgid "Miscellaneous Settings"
 msgstr "Otros ajustes"
 
-#: sar-friendly-smtp.php:250
+#: sar-friendly-smtp.php:251
 msgid "Debug Mode"
 msgstr "Modo depuración"
 
-#: sar-friendly-smtp.php:254
+#: sar-friendly-smtp.php:255
 #, php-format
 msgid ""
 "Error Log option adds commands and data between WordPress and your SMTP "
-"server to PHP error_log file. %sMore information in the plugin's FAQ%s."
+"server to PHP error_log file. %sMore information in the FAQ%s."
 msgstr ""
 "La opción de registro de depuración añade los comandos y datos entre "
 "WordPress y tu servidor SMTP al archivo error_log de PHP. %sMás información "
-"en las FAQ de la extensión%s."
+"en las FAQ%s."
 
-#: sar-friendly-smtp.php:259
+#: sar-friendly-smtp.php:260
 msgid "Allow Invalid SSL"
 msgstr "Permitir SSL no válido"
 
-#: sar-friendly-smtp.php:263
+#: sar-friendly-smtp.php:264
 #, php-format
 msgid ""
 "Allow connecting to a server with invalid SSL setup. Bear in mind this is "
@@ -197,7 +197,7 @@ msgstr ""
 "configuración SSL del servidor.  %sMás detalles en el repositorio Github de "
 "PHPMailer Github%s."
 
-#: sar-friendly-smtp.php:275
+#: sar-friendly-smtp.php:276
 msgid ""
 "This setting is being overridden by SAR_FSMTP_FROM_NAME constant set in your "
 "wp-config.php file."
@@ -205,7 +205,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_FROM_NAME en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:296
+#: sar-friendly-smtp.php:297
 msgid ""
 "This setting is being overridden by SAR_FSMTP_FROM constant set in your wp-"
 "config.php file."
@@ -213,7 +213,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_FROM en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:317
+#: sar-friendly-smtp.php:318
 msgid ""
 "This setting is being overridden by SAR_FSMTP_USER constant set in your wp-"
 "config.php file."
@@ -221,7 +221,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_USER en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:339
+#: sar-friendly-smtp.php:340
 msgid ""
 "This setting is being overridden by SAR_FSMTP_PASSWORD constant set in your "
 "wp-config.php file."
@@ -229,7 +229,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_PASSWORD en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:360
+#: sar-friendly-smtp.php:361
 msgid ""
 "This setting is being overridden by SAR_FSMTP_HOST constant set in your wp-"
 "config.php file."
@@ -237,7 +237,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_HOST en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:381
+#: sar-friendly-smtp.php:382
 msgid ""
 "This setting is being overridden by SAR_FSMTP_PORT constant set in your wp-"
 "config.php file."
@@ -245,7 +245,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_PORT en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:403
+#: sar-friendly-smtp.php:404
 msgid ""
 "This setting is being overridden by SAR_FSMTP_ENCRYPTION constant set in "
 "your wp-config.php file."
@@ -253,19 +253,19 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_ENCRYPTION en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:412
+#: sar-friendly-smtp.php:413
 msgid "None"
 msgstr "Ninguna"
 
-#: sar-friendly-smtp.php:413
+#: sar-friendly-smtp.php:414
 msgid "TLS"
 msgstr "TLS"
 
-#: sar-friendly-smtp.php:414
+#: sar-friendly-smtp.php:415
 msgid "SSL"
 msgstr "SSL"
 
-#: sar-friendly-smtp.php:429
+#: sar-friendly-smtp.php:430
 msgid ""
 "This setting is being overridden by SAR_FSMTP_DEBUG_MODE constant set in "
 "your wp-config.php file."
@@ -273,15 +273,15 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_DEBUG_MODE en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:438 sar-friendly-smtp.php:462
+#: sar-friendly-smtp.php:439 sar-friendly-smtp.php:463
 msgid "Off"
 msgstr "Desactivado"
 
-#: sar-friendly-smtp.php:439
+#: sar-friendly-smtp.php:440
 msgid "Error Log"
 msgstr "Registro de errores"
 
-#: sar-friendly-smtp.php:453
+#: sar-friendly-smtp.php:454
 msgid ""
 "This setting is being overridden by SAR_FSMTP_ALLOW_INVALID_SSL constant in "
 "your wp-config.php file."
@@ -289,25 +289,25 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante "
 "SAR_FSMTP_ALLOW_INVALID_SSL  en tu archivo wp-config.php"
 
-#: sar-friendly-smtp.php:463
+#: sar-friendly-smtp.php:464
 msgid "On"
 msgstr "Activado"
 
-#: sar-friendly-smtp.php:473
+#: sar-friendly-smtp.php:474
 #, php-format
 msgid ""
 "These settings are %srequired%s. Be sure to put the correct settings here or "
-"your mail send will fail. If you're not sure about what values you need to "
+"your mail send will fail. If you are not sure about what values you need to "
 "put in each field, contact your SMTP server support. After saving these "
 "settings you can test them in %sSend Email Test%s page."
 msgstr ""
 "Estos ajustes son %sobligatorios%s. Asegúrate de poner aquí los ajustes "
 "correctos o el envío de tu email fallará. Si no estás seguro de qué valores "
 "necesitas poner en cada campo, contacta con el soporte de tu servidor SMTP. "
-"Después de guardar estos ajustes puedes probarlos desde \"%sPrueba envío "
-"email%s\"."
+"Después de guardar estos ajustes puedes probarlos desde %sPrueba envío email"
+"%s."
 
-#: sar-friendly-smtp.php:478
+#: sar-friendly-smtp.php:479
 #, php-format
 msgid ""
 "These settings are %1$soptional%2$s and only used if no other plugin using "
@@ -325,21 +325,21 @@ msgstr ""
 "extensión establece su propia información, WordPress usará los ajustes "
 "predeterminados para estos campos."
 
-#: sar-friendly-smtp.php:483
+#: sar-friendly-smtp.php:484
 #, php-format
 msgid ""
 "These settings are %1$soptional%2$s too. Remember to turn off Debug Mode "
-"when you're done with the troubleshooting to avoid raising your server load "
+"when you are done with the troubleshooting to avoid raising your server load "
 "by generating unnecessary logs."
 msgstr ""
 "Estos ajustes también son %1$sopcionales%2$s. Recuerda desactivar el modo "
 "depuración cuando hayas solucionado el problema para evitar aumentar la "
 "carga de tu servidor generando archivos de registros innecesarios."
 
-#: sar-friendly-smtp.php:489
+#: sar-friendly-smtp.php:490
 msgid "You do not have sufficient permissions to access this page."
 msgstr "No tienes suficientes permisos para acceder a esta página."
 
-#: sar-friendly-smtp.php:494
+#: sar-friendly-smtp.php:495
 msgid "SAR Friendly SMTP Settings"
 msgstr "Ajustes de SAR Friendly SMTP"

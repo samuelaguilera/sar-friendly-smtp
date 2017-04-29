@@ -23,7 +23,7 @@ function sar_friendly_smtp_test_email() {
 
         if ( $mail_sent == true ) {
             echo '<div id="message" class="updated fade"><p>';
-	        $result_text = sprintf( wp_kses( __( '%3$sAccording to WordPress %1$sthe email has been passed correctly to the SMTP server%2$s.%4$s%3$sThis means that %1$snow the SMTP server will process the email and send it or reject%2$s based on the server policies. If you don\'t receive the email, contact with your SMTP server support.%4$s', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>', '<p>', '</p>' );
+	        $result_text = sprintf( wp_filter_nohtml_kses( __( '%3$sAccording to WordPress %1$sthe email has been passed correctly to the SMTP server%2$s.%4$s%3$sThis means that %1$snow the SMTP server will process the email and send it or reject%2$s based on the server policies. If you don\'t receive the email, contact with your SMTP server support.%4$s', 'sar-friendly-smtp' ) ), '<strong>', '</strong>', '<p>', '</p>' );
             echo $result_text;
             echo '</p></div>';
 
@@ -68,7 +68,7 @@ function sar_friendly_smtp_test_email() {
 <h2><?php _e( 'SAR Friendly SMTP', 'sar-friendly-smtp' ); ?></h2>
 <h3><?php _e( 'Send Email Test', 'sar-friendly-smtp' ); ?></h3>
 
-<p><?php $instructions = sprintf( wp_kses( __( '%3$sFrom this screen you can try to send an email to the WordPress admin email in %1$sSettings -> General -> E-mail Address%2$s to see if your SMTP settings are correct.%4$s%3$sSimply click the button below.%4$s', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>', '<p>', '</p>' );
+<p><?php $instructions = sprintf( wp_filter_nohtml_kses( __( '%3$sFrom this screen you can try to send an email to the WordPress admin email in %1$sSettings -> General -> E-mail Address%2$s to see if your SMTP settings are correct.%4$s%3$sSimply click the button below.%4$s', 'sar-friendly-smtp' ) ), '<strong>', '</strong>', '<p>', '</p>' );
 echo $instructions; ?></p>
 
 <form action="" method="post" enctype="multipart/form-data" name="sarfsmtp_test_email_form">

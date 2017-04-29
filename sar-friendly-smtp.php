@@ -252,7 +252,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_debug_mode_setting_render', 
 		'sarfsmtp_settings_misc_page', 
 		'sarfsmtp_misc_settings_section',
-		array( sprintf( wp_kses( __( 'Error Log option adds commands and data between WordPress and your SMTP server to PHP error_log file. %sMore information in the plugin\'s FAQ%s.', 'sar-friendly-smtp' ), array() ), '<a href="https://wordpress.org/plugins/sar-friendly-smtp/faq/" title="SAR Friendly SMTP - FAQ" target="_blank">', '</a>' ) ) 
+		array( sprintf( wp_filter_nohtml_kses( __( "Error Log option adds commands and data between WordPress and your SMTP server to PHP error_log file. %sMore information in the FAQ%s.", 'sar-friendly-smtp' ) ), '<a href="https://wordpress.org/plugins/sar-friendly-smtp/faq/" title="SAR Friendly SMTP - FAQ" target="_blank" rel="noopener noreferrer">', '</a>' ) ) 
 	);
 
 	add_settings_field( 
@@ -261,7 +261,7 @@ function sarfsmtp_settings_init(  ) {
 		'sarfsmtp_allow_invalid_ssl_setting_render', 
 		'sarfsmtp_settings_misc_page', 
 		'sarfsmtp_misc_settings_section',
-		array( sprintf( wp_kses( __( 'Allow connecting to a server with invalid SSL setup. Bear in mind this is only a workaround, the right thing would be to fix the server SSL setup. %sMore details at PHPMailer Github repository%s.', 'sar-friendly-smtp' ), array() ), '<a href="https://github.com/PHPMailer/PHPMailer/issues/270" title="SMTP connect() failed due to invalid SSL setup" target="_blank">', '</a>' ) ) 
+		array( sprintf( wp_filter_nohtml_kses( __( 'Allow connecting to a server with invalid SSL setup. Bear in mind this is only a workaround, the right thing would be to fix the server SSL setup. %sMore details at PHPMailer Github repository%s.', 'sar-friendly-smtp' ) ), '<a href="https://github.com/PHPMailer/PHPMailer/issues/270" title="SMTP connect() failed due to invalid SSL setup" target="_blank" rel="noopener noreferrer">', '</a>' ) ) 
 	);
 
 }
@@ -471,17 +471,17 @@ function sarfsmtp_allow_invalid_ssl_setting_render( $args ) {
 
 function sarfsmtp_server_details_section_callback(  ) { 
 	$url = esc_url( get_admin_url( null, 'admin.php?page=sar_fsmtp_email_test' ) );
-	$text = sprintf( wp_kses( __( 'These settings are %srequired%s. Be sure to put the correct settings here or your mail send will fail. If you\'re not sure about what values you need to put in each field, contact your SMTP server support. After saving these settings you can test them in %sSend Email Test%s page.', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>', "<a href='$url'>", '</a>' );
+	$text = sprintf( wp_filter_nohtml_kses( __( 'These settings are %srequired%s. Be sure to put the correct settings here or your mail send will fail. If you are not sure about what values you need to put in each field, contact your SMTP server support. After saving these settings you can test them in %sSend Email Test%s page.', 'sar-friendly-smtp' ) ), '<strong>', '</strong>', "<a href='$url'>", '</a>' );
 	echo $text;
 }
 
 function sarfsmtp_optional_fields_section(  ) { 
-	$text = sprintf( wp_kses( __( 'These settings are %1$soptional%2$s and only used if no other plugin using wp_mail() set its own data for these fields. (E.g. If you use Gravity Forms, these settings %1$swill not replace%2$s your FROM name/address for notifications created in Form Settings -> Notifications). If you leave this blank and no other plugin is setting their own info, WordPress will use the default core settings for these fields.', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>' );
+	$text = sprintf( wp_filter_nohtml_kses( __( 'These settings are %1$soptional%2$s and only used if no other plugin using wp_mail() set its own data for these fields. (E.g. If you use Gravity Forms, these settings %1$swill not replace%2$s your FROM name/address for notifications created in Form Settings -> Notifications). If you leave this blank and no other plugin is setting their own info, WordPress will use the default core settings for these fields.', 'sar-friendly-smtp' ) ), '<strong>', '</strong>' );
 	echo $text;
 }
 
 function sarfsmtp_misc_settings_section(  ) { 
-	$text = sprintf( wp_kses( __( 'These settings are %1$soptional%2$s too. Remember to turn off Debug Mode when you\'re done with the troubleshooting to avoid raising your server load by generating unnecessary logs.', 'sar-friendly-smtp' ), array() ), '<strong>', '</strong>' );
+	$text = sprintf( wp_filter_nohtml_kses( __( 'These settings are %1$soptional%2$s too. Remember to turn off Debug Mode when you are done with the troubleshooting to avoid raising your server load by generating unnecessary logs.', 'sar-friendly-smtp' ) ), '<strong>', '</strong>' );
 	echo $text;
 }
 
