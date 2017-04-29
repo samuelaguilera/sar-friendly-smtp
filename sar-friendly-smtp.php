@@ -7,6 +7,7 @@ Author: Samuel Aguilera
 Version: 1.2
 Author URI: http://www.samuelaguilera.com
 Text Domain: sar-friendly-smtp
+Domain Path: /languages
 License: GPL3
 */
 
