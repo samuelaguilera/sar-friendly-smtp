@@ -30,7 +30,7 @@ If you're happy with the plugin [please don't forget to give it a good rating](h
 * Option to enable debug mode (logs communication between WordPress and your SMTP server in PHP's error_log file, check [FAQ](https://wordpress.org/plugins/sar-friendly-smtp/faq/) for more details).
 * Uses WordPress settings API for settings page, making it secure by default.
 * Custom capability for settings access, so you can allow non administrator users to access to the settings page if you need it using [User Role Editor](https://wordpress.org/plugins/user-role-editor/) (or any other similar plugin).
-* Send Email Test page in Tools menu. Allowing you to test if WordPress is able to send emails using the SMTP server details provided.
+* Send Email Test page. Allowing you to test if WordPress is able to send emails using the SMTP server details provided.
 * Constants available to override settings using wp-config.php (useful to set same settings network-wide on a multi-site installation).
 
 = Requirements =
