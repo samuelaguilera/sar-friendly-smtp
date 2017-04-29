@@ -54,9 +54,9 @@ If you want to contribute to the development of this plugin fixing a bug or **su
 
 = I can't receive emails sent by my WordPress, what happen? =
 
-This plugin is just a way to tell WordPress something like: "Please dear WordPress, use my SMTP server to send the emails, don't use the web server."
+This plugin is just a way to tell WordPress something like: "Please dear WordPress, use my SMTP server to send the emails, not the web server."
 
-That means that **this plugin don't send you emails**, WordPress sends your emails using **your SMTP server**.
+That means that **this plugin doesn't send you emails**, when the plugin is enabled WordPress sends your emails using **your SMTP server**.
 
 If you're having trouble sending your emails, you can activate the debug mode in settings page. That activates the logging of the commands and data between WordPress and your SMTP server, and **most of the time** you will find useful information in your PHP error_log file.
 
@@ -81,7 +81,7 @@ Gmail/Google Apps (and probably other servers too) only allows you to send email
 
 = My emails are sent, debug log looks ok, but they're lost in the cyberspace, never reach the destination! Why life is so cruel with me? I'm going to cry! =
 
-Be happy man, life is life... Sending an email sucessfully does not guarantee you that it will reach the destination, an email goes thru many email servers before reach the recipient email inbox. And finally, if your email reach the server that handles the inbox for the destination email address, it's this server who has the last word to decide if your email is going to be delivered to the recipient or not.
+Be happy man, life is life... Sending an email successfully does not guarantee you that it will reach the destination, an email goes thru many email servers before reaching the recipient email inbox. And finally, if your email reach the server that handles the inbox for the destination email address, it's this server who has the last word to decide if your email is going to be delivered to the recipient or not.
 
 Lots of things can be considered to reject your emails in destination without any notice: Content of the email triggering spam filters (i.e. too many links in your email content) or recipient server policy, bad reputation of your domain or SMTP IP, missing recommendations (i.e. SPF record)... It's a whole world man!
 
