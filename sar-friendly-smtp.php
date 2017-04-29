@@ -6,6 +6,7 @@ Description: A friendly SMTP plugin for WordPress. No third-party, simply using 
 Author: Samuel Aguilera
 Version: 1.2
 Author URI: http://www.samuelaguilera.com
+Text Domain: sar-friendly-smtp
 License: GPL3
 */
 
@@ -63,8 +64,8 @@ require('includes/email-test.php');
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'sarfsmtp_action_links' );
 
 function sarfsmtp_action_links( $links ) {
-   $links[] = '<a href="'. esc_url( get_admin_url( null, 'admin.php?page=sar_friendly_smtp' ) ) .'">Settings</a>';
-   $links[] = '<a href="'. esc_url( get_admin_url( null, 'admin.php?page=sar_fsmtp_email_test' ) ) .'">Send Email Test</a>';
+   $links[] = '<a href="' . esc_url( get_admin_url( null, 'admin.php?page=sar_friendly_smtp' ) ) . '">' . __( 'Settings', 'sar-friendly-smtp' ) . '</a>';
+   $links[] = '<a href="' . esc_url( get_admin_url( null, 'admin.php?page=sar_fsmtp_email_test' ) ) . '">' . __( 'Send Email Test', 'sar-friendly-smtp' ) . '</a>';
    return $links;
 }
 
