@@ -23,7 +23,7 @@ function sar_friendly_smtp_test_email() {
 
         if ( $mail_sent == true ) {
             echo '<div id="message" class="updated fade"><p>';
-	        $result_text = sprintf( wp_filter_nohtml_kses( __( '%3$sAccording to WordPress %1$sthe email has been passed correctly to the SMTP server%2$s.%4$s%3$sThis means that %1$snow the SMTP server will process the email and send it or reject%2$s based on the server policies. If you do not receive the email, contact with your SMTP server support.%4$s', 'sar-friendly-smtp' ) ), '<strong>', '</strong>', '<p>', '</p>' );
+	        $result_text = sprintf( wp_filter_nohtml_kses( __( '%3$sAccording to WordPress %1$sthe email has been passed correctly to the SMTP server%2$s.%4$s%3$sThis means that %1$snow the SMTP server will process the email and send or reject it%2$s based on the server policies. If you do not receive the email, contact with your SMTP server support.%4$s', 'sar-friendly-smtp' ) ), '<strong>', '</strong>', '<p>', '</p>' );
             echo $result_text;
             echo '</p></div>';
 

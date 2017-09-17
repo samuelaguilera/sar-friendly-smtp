@@ -4,7 +4,7 @@ Plugin Name: SAR Friendly SMTP
 Plugin URI: http://www.samuelaguilera.com
 Description: A friendly SMTP plugin for WordPress. No third-party, simply using WordPress native possibilities.
 Author: Samuel Aguilera
-Version: 1.2
+Version: 1.2.2
 Author URI: http://www.samuelaguilera.com
 Text Domain: sar-friendly-smtp
 Domain Path: /languages
@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Current plugin version, for now only used for XMailer setting
-define('SAR_FSMTP_VER', '1.2');
+define('SAR_FSMTP_VER', '1.2.2');
 
 // Add/Remove custom capability for settings access upon activation/deactivation
 register_activation_hook( __FILE__, 'sar_friendly_smtp_add_cap' );
@@ -151,7 +151,7 @@ function sarfsmtp_settings_init(  ) {
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_smtp_server', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_port', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_encryption', 'wp_filter_nohtml_kses' );
-	register_setting( 'sarfsmtp_settings_from_page', 'sarfsmtp_from_name', 'wp_filter_nohtml_kses' );
+	register_setting( 'sarfsmtp_settings_from_page', 'sarfsmtp_from_name', 'sar_wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_from_page', 'sarfsmtp_from_address', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_misc_page', 'sarfsmtp_debug_mode', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_misc_page', 'sarfsmtp_allow_invalid_ssl', 'wp_filter_nohtml_kses' );
@@ -520,6 +520,7 @@ function sar_friendly_smtp_options_page(  ) {
 		submit_button();
 		?>	
 	</form>
+	</div>
 	<?php
 }
 
@@ -551,3 +552,8 @@ function sarfsmtp_maybe_upgrade_settings(){
 
 }
 add_action( 'admin_init', 'sarfsmtp_maybe_upgrade_settings' );
+
+function sar_wp_filter_nohtml_kses( $data ) {
+	// modified wp_filter_nohtml_kses to allow the use of single quotes https://core.trac.wordpress.org/ticket/40606
+	return wp_kses( stripslashes( $data ), 'strip' );
+}
