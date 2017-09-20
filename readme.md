@@ -91,12 +91,19 @@ Lots of things can be considered to reject your emails in destination without an
 I would recommend you to check any of the services below, all of them provide a SMTP server to use and can help you to improve your email delivery.
  
 [Mailgun](https://www.mailgun.com/)
+
 [Sendgrid](https://sendgrid.com/)
+
 [Mailjet](https://mailjet.com/)
+
 [SparkPost](https://www.sparkpost.com/)
+
 [Elastic Email](https://elasticemail.com/)
+
 [MailRelay](https://mailrelay.com/)
+
 [Pepipost](https://pepipost.com/)
+
 [Sendinblue](https://sendinblue.com/)
 
 ### What means error messages displayed on send email test screen? 
