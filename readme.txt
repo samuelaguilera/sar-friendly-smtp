@@ -3,8 +3,8 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E45TMW9JCPRW
 Tags: email, smtp, notifications, phpmailer, sendmail, wp_mail
 Requires at least: 3.9.3
-Tested up to: 4.8.1
-Stable tag: 1.2.2
+Tested up to: 4.8.2
+Stable tag: 1.2.3
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -36,6 +36,7 @@ If you're happy with the plugin [please don't forget to give it a good rating](h
 
 = Requirements =
 
+* PHP 5.6 or higher.
 * WordPress 3.9.3 or higher.
 * SMTP server :)
 
@@ -45,7 +46,7 @@ Just install in your WordPress like any other plugin, activate it and fill setti
 
 = Developers =
 
-If you want to contribute to the development of this plugin fixing a bug or **suggesting** any improvement, there's a [Github repository available](https://github.com/samuelaguilera/sar-friendly-smtp)
+If you want to contribute to the development of this plugin fixing a bug or **suggesting** any improvement, feel free to submit a pull request to this repo.
 
 == Installation ==
 
@@ -125,10 +126,11 @@ This is useful if you want to use the same settings network-wide in a WordPress 
 
 == Changelog ==
 
-= 1.2.2 =
+= 1.2.3 =
 
 * Added missing closing div tag in settings page.
 * Fixed saving From Name in settings page when single quotes are used (e.g. O'Brian).
+* Shortened menu title in dashboard menu to "SMTP".
 
 = 1.2 =
 

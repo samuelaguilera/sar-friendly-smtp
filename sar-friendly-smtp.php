@@ -4,7 +4,7 @@ Plugin Name: SAR Friendly SMTP
 Plugin URI: http://www.samuelaguilera.com
 Description: A friendly SMTP plugin for WordPress. No third-party, simply using WordPress native possibilities.
 Author: Samuel Aguilera
-Version: 1.2.2
+Version: 1.2.3
 Author URI: http://www.samuelaguilera.com
 Text Domain: sar-friendly-smtp
 Domain Path: /languages
@@ -138,7 +138,7 @@ add_action( 'admin_init', 'sarfsmtp_settings_init' );
 
 function sarfsmtp_add_admin_menu(  ) { 
 
-	add_menu_page( 'SAR Friendly SMTP', 'SAR Friendly SMTP', 'sar_fsmtp_options', 'sar_friendly_smtp', 'sar_friendly_smtp_options_page', 'dashicons-email-alt', '80' );
+	add_menu_page( 'SAR Friendly SMTP', 'SMTP', 'sar_fsmtp_options', 'sar_friendly_smtp', 'sar_friendly_smtp_options_page', 'dashicons-email-alt', '80' );
 	add_submenu_page( 'sar_friendly_smtp', __( 'Settings', 'sar-friendly-smtp' ), __( 'Settings', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_friendly_smtp' );
 	add_submenu_page( 'sar_friendly_smtp', __( 'Send Email Test', 'sar-friendly-smtp' ), __( 'Send Email Test', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_fsmtp_email_test', 'sar_friendly_smtp_test_email');
 }
