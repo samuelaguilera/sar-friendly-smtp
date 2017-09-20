@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sar-friendly-smtp\n"
-"POT-Creation-Date: 2017-09-10 01:00+0200\n"
-"PO-Revision-Date: 2017-09-10 01:01+0200\n"
+"POT-Creation-Date: 2017-09-20 17:42+0200\n"
+"PO-Revision-Date: 2017-09-20 17:42+0200\n"
 "Last-Translator: Samuel Aguilera <samuel@rocketgenius.com>\n"
 "Language-Team: Samuel Aguilera <correo@samuelguilera.com>\n"
 "Language: es_ES\n"
@@ -93,11 +93,11 @@ msgstr "Usuario"
 
 #: sar-friendly-smtp.php:173
 msgid ""
-"Most SMTP servers (e.g. Gmail/Google Apps) requires your full email address "
-"as username."
+"Most SMTP servers requires your full email address as username (e.g. "
+"user@gmail.com )."
 msgstr ""
-"La mayoría de servidores SMTP (p.ej. Gmail/Google Apps) necesitan tu "
-"dirección de email completa como nombre de usuario."
+"La mayoría de servidores SMTP necesitan tu dirección de email completa como "
+"nombre de usuario (p.ej. usuario@gmail.com )."
 
 #: sar-friendly-smtp.php:178
 msgid "Password"
@@ -118,10 +118,10 @@ msgstr "Puerto"
 #: sar-friendly-smtp.php:200
 msgid ""
 "If your server uses encryption, this should be 587 or 465 (e.g. Gmail and "
-"Mandrill uses 587). If not, standard non encrypted port is 25."
+"Mailgun use 587). If not, standard non encrypted port is 25."
 msgstr ""
-"Si tu servidor usa encriptación, esto debería ser 587 o 465 (p.ej. Gmail and "
-"Mandrill uses 587). Sino, el puerto estándar sin encriptación es el 25."
+"Si tu servidor usa encriptación, esto debería ser 587 o 465 (p.ej. Gmail y "
+"Mailgun usan el 587). Sino, el puerto estándar sin encriptación es el 25."
 
 #: sar-friendly-smtp.php:205
 msgid "Encryption"
@@ -129,11 +129,11 @@ msgstr "Encriptación"
 
 #: sar-friendly-smtp.php:209
 msgid ""
-"When using ecryption, most common setting is TLS. (e.g. Gmail and Mandrill "
-"uses TLS)."
+"When using ecryption, most common setting is TLS. (e.g. Gmail and Mailgun "
+"use TLS)."
 msgstr ""
 "Cuando se usa encriptación el ajuste más utilizado habitualmente es TLS. (p."
-"ej. Gmail y Mandrill usan TLS)."
+"ej. Gmail y Mailgun usan TLS)."
 
 #: sar-friendly-smtp.php:217 sar-friendly-smtp.php:503
 msgid "FROM Field Settings"

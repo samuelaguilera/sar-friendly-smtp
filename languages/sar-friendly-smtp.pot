@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sar-friendly-smtp\n"
-"POT-Creation-Date: 2017-09-10 01:01+0200\n"
-"PO-Revision-Date: 2017-09-10 01:01+0200\n"
+"POT-Creation-Date: 2017-09-20 17:42+0200\n"
+"PO-Revision-Date: 2017-09-20 17:42+0200\n"
 "Last-Translator: Samuel Aguilera <samuel@rocketgenius.com>\n"
 "Language-Team: Samuel Aguilera <correo@samuelguilera.com>\n"
 "Language: en_US\n"
@@ -82,8 +82,8 @@ msgstr ""
 
 #: sar-friendly-smtp.php:173
 msgid ""
-"Most SMTP servers (e.g. Gmail/Google Apps) requires your full email address "
-"as username."
+"Most SMTP servers requires your full email address as username (e.g. "
+"user@gmail.com )."
 msgstr ""
 
 #: sar-friendly-smtp.php:178
@@ -106,7 +106,7 @@ msgstr ""
 #: sar-friendly-smtp.php:200
 msgid ""
 "If your server uses encryption, this should be 587 or 465 (e.g. Gmail and "
-"Mandrill uses 587). If not, standard non encrypted port is 25."
+"Mailgun use 587). If not, standard non encrypted port is 25."
 msgstr ""
 
 #: sar-friendly-smtp.php:205
@@ -115,8 +115,8 @@ msgstr ""
 
 #: sar-friendly-smtp.php:209
 msgid ""
-"When using ecryption, most common setting is TLS. (e.g. Gmail and Mandrill "
-"uses TLS)."
+"When using ecryption, most common setting is TLS. (e.g. Gmail and Mailgun "
+"use TLS)."
 msgstr ""
 
 #: sar-friendly-smtp.php:217 sar-friendly-smtp.php:503

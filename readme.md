@@ -73,6 +73,10 @@ The location of the PHP error_log file it's not the same in all servers, because
 If you don't know how to access to that file or you can't see any useful information about the sending process on that log file, **you need to contact with the support staff of your SMTP server** to ask them for the information.
 
 
+### I'm totally sure that I'm using correct settings to send emails using Gmail SMTP server but I'm still getting an error when trying to send the emails
+
+
+
 ### I'm using Gmail SMTP server and all my emails are sent with my Gmail account address in the from address field even when I have another email in 'From Email Address', why? 
 
 Gmail/Google Apps (and probably other servers too) only allows you to send emails using your account email address in the FROM header.
@@ -84,8 +88,16 @@ Be happy man, life is life... Sending an email successfully does not guarantee y
 
 Lots of things can be considered to reject your emails in destination without any notice: Content of the email triggering spam filters (i.e. too many links in your email content) or recipient server policy, bad reputation of your domain or SMTP IP, missing recommendations (i.e. SPF record)... It's a whole world man!
 
-Services like http://mandrill.com/ or https://sendgrid.com/ can help you to improve your email delivery.
-
+I would recommend you to check any of the services below, all of them provide a SMTP server to use and can help you to improve your email delivery.
+ 
+[Mailgun](https://www.mailgun.com/)
+[Sendgrid](https://sendgrid.com/)
+[Mailjet](https://mailjet.com/)
+[SparkPost](https://www.sparkpost.com/)
+[Elastic Email](https://elasticemail.com/)
+[MailRelay](https://mailrelay.com/)
+[Pepipost](https://pepipost.com/)
+[Sendinblue](https://sendinblue.com/)
 
 ### What means error messages displayed on send email test screen? 
 

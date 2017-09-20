@@ -87,8 +87,17 @@ Be happy man, life is life... Sending an email successfully does not guarantee y
 
 Lots of things can be considered to reject your emails in destination without any notice: Content of the email triggering spam filters (i.e. too many links in your email content) or recipient server policy, bad reputation of your domain or SMTP IP, missing recommendations (i.e. SPF record)... It's a whole world man!
 
-Services like http://mandrill.com/ or https://sendgrid.com/ can help you to improve your email delivery.
+I would recommend you to check any of the services below, all of them provide a SMTP server to use and can help you to improve your email delivery.
 
+[Mailgun](https://www.mailgun.com/)
+[Sendgrid](https://sendgrid.com/)
+[Mailjet](https://mailjet.com/)
+[SparkPost](https://www.sparkpost.com/)
+[Elastic Email](https://elasticemail.com/)
+[MailRelay](https://mailrelay.com/)
+[Pepipost](https://pepipost.com/)
+[Sendinblue](https://sendinblue.com/)
+   
 = What means error messages displayed on send email test screen? =
 
 SMTP Error: Could not authenticate -> This indicates the server refused your authentication data, probably due to incorrect username or password, but other incorrect settings can cause this too (like a bad port or encryption). Double check you have entered correct information in settings and contact with your SMTP server support if all is ok from your side.
