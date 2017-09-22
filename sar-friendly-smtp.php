@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Current plugin version, for now only used for XMailer setting
-define('SAR_FSMTP_VER', '1.2.2');
+define('SAR_FSMTP_VER', '1.2.3');
 
 // Add/Remove custom capability for settings access upon activation/deactivation
 register_activation_hook( __FILE__, 'sar_friendly_smtp_add_cap' );
