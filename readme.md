@@ -126,7 +126,8 @@ An example of plugin that makes your emails to be sent with the site name is Bud
 
 Since version 1.1 you can do this. Below you can see an example of use.
 
-`define( 'SAR_FSMTP_USER', 'your_username' );
+```php
+define( 'SAR_FSMTP_USER', 'your_username' );
 define( 'SAR_FSMTP_PASSWORD', 'your_password' );
 define( 'SAR_FSMTP_HOST', 'smtp.example.com' );
 // IMPORTANT! Don't use quotes for the SAR_FSMTP_PORT value!
@@ -134,18 +135,26 @@ define( 'SAR_FSMTP_PORT', 587 );
 define( 'SAR_FSMTP_ENCRYPTION', 'tls' );
 // These two are optional. SAR_FSMTP_FROM must be a valid email according to is_email() WP core function.
 define( 'SAR_FSMTP_FROM', 'you@example.com' );
-define( 'SAR_FSMTP_FROM_NAME', 'Your Name' );`
+define( 'SAR_FSMTP_FROM_NAME', 'Your Name' );
+```
 
 In 1.2 the following constants are added too:
 
-`define( 'SAR_FSMTP_DEBUG_MODE', 'error_log' );
-define( 'SAR_FSMTP_ALLOW_INVALID_SSL', 'on' );`
+```php
+define( 'SAR_FSMTP_DEBUG_MODE', 'error_log' );
+define( 'SAR_FSMTP_ALLOW_INVALID_SSL', 'on' );
+```
 
 This is useful if you want to use the same settings network-wide in a WordPress network (multisite installation).
 
 
 ## Changelog 
 
+### 1.2.5
+
+* Added own styles to settings page to fix placement of messages shown when settings are overridden by values set in the wp-config.php file.
+* Added Settings Saved notice.
+* Minor changes to text shown in Send Email Test page.
 
 ### 1.2.3
 

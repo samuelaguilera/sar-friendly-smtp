@@ -2,10 +2,10 @@
 Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E45TMW9JCPRW
 Tags: email, smtp, notifications, phpmailer, sendmail, wp_mail
-Requires at least: 3.9.3
-Tested up to: 4.8.2
-Stable tag: 1.2.3
-Requires PHP: 5.6
+Requires at least: 4.9
+Tested up to: 4.9.8
+Stable tag: 1.2.5
+Requires PHP: 7.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -36,9 +36,11 @@ If you're happy with the plugin [please don't forget to give it a good rating](h
 
 = Requirements =
 
-* PHP 5.6 or higher.
-* WordPress 3.9.3 or higher.
+* PHP 7.0 or higher.
+* WordPress 4.9 or higher.
 * SMTP server :)
+
+It may work with older versions of PHP and WordPress (and it does in fact at the time of writing this), but I don't support anything older than the versions mentioned above.
 
 = Usage =
 
@@ -134,6 +136,12 @@ define( 'SAR_FSMTP_ALLOW_INVALID_SSL', 'on' );`
 This is useful if you want to use the same settings network-wide in a WordPress network (multisite installation).
 
 == Changelog ==
+
+= 1.2.5 =
+
+* Added own styles to settings page to fix placement of messages shown when settings are overridden by values set in the wp-config.php file.
+* Added Settings Saved notice.
+* Minor changes to text shown in Send Email Test page.
 
 = 1.2.3 =
 

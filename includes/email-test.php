@@ -68,8 +68,8 @@ function sar_friendly_smtp_test_email() {
 <h2><?php _e( 'SAR Friendly SMTP', 'sar-friendly-smtp' ); ?></h2>
 <h3><?php _e( 'Send Email Test', 'sar-friendly-smtp' ); ?></h3>
 
-<p><?php $instructions = sprintf( wp_filter_nohtml_kses( __( '%3$sFrom this screen you can try to send an email to the WordPress admin email in %1$sSettings -> General -> E-mail Address%2$s to see if your SMTP settings are correct.%4$s%3$sSimply click the button below.%4$s', 'sar-friendly-smtp' ) ), '<strong>', '</strong>', '<p>', '</p>' );
-echo $instructions; ?></p>
+<?php $note = sprintf( wp_filter_nohtml_kses( __( '%3$sThe purporse of this test is only to check if, using the SMTP details you have configured in the plugin settins page, %1$sWordPress is able to connect with your SMTP server and ask the server to send a simple plain text email%2$s. After this, sending the email or not is determined by the rules set by your SMTP provider. %1$sTherefore a successful connection does not guarantee the email sending or its deliverability.%2$s%3$sThe email will be sent to the WordPress admin email configured in %1$sSettings -> General -> E-mail Address%2$s. If the result of the test is an error or the email is not received, you will want to contact with your SMTP server support for assistance.%4$s%3$sTo start the test, simply click the button below.%4$s%4$s', 'sar-friendly-smtp' ) ), '<strong>', '</strong>', '<p>', '</p>' );
+	echo '<div class="sar-test-info">' . $note . '</div>'; ?>
 
 <form action="" method="post" enctype="multipart/form-data" name="sarfsmtp_test_email_form">
 <input type="hidden" name="sarfsmtp_test" value="test_email" />

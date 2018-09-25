@@ -4,7 +4,7 @@ Plugin Name: SAR Friendly SMTP
 Plugin URI: http://www.samuelaguilera.com
 Description: A friendly SMTP plugin for WordPress. No third-party, simply using WordPress native possibilities.
 Author: Samuel Aguilera
-Version: 1.2.3
+Version: 1.2.5
 Author URI: http://www.samuelaguilera.com
 Text Domain: sar-friendly-smtp
 Domain Path: /languages
@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Current plugin version, for now only used for XMailer setting
-define('SAR_FSMTP_VER', '1.2.3');
+define('SAR_FSMTP_VER', '1.2.5');
 
 // Add/Remove custom capability for settings access upon activation/deactivation
 register_activation_hook( __FILE__, 'sar_friendly_smtp_add_cap' );
@@ -75,6 +75,21 @@ add_action( 'plugins_loaded', 'sar_friendly_smtp_load_textdomain' );
 
 function sar_friendly_smtp_load_textdomain() {
   load_plugin_textdomain( 'sar-friendly-smtp', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+}
+
+// Styles for settings page
+add_action( 'admin_enqueue_scripts', 'sar_friendly_smtp_settings_style' );
+
+function sar_friendly_smtp_settings_style($hook) {
+	
+	global $sarfsmtp_settings_page, $sarfsmtp_test_page;
+
+    // Load only in plugin's pages
+	if ( $hook != $sarfsmtp_settings_page && $hook != $sarfsmtp_test_page ) {
+		return;
+    }
+
+    wp_enqueue_style( 'custom_wp_admin_css', plugins_url('css/sar-fsmtp-styles.css', __FILE__ ) );
 }
 
 // The party starts :)
@@ -138,9 +153,13 @@ add_action( 'admin_init', 'sarfsmtp_settings_init' );
 
 function sarfsmtp_add_admin_menu(  ) { 
 
+	global $sarfsmtp_settings_page, $sarfsmtp_test_page;
+
 	add_menu_page( 'SAR Friendly SMTP', 'SMTP', 'sar_fsmtp_options', 'sar_friendly_smtp', 'sar_friendly_smtp_options_page', 'dashicons-email-alt', '80' );
-	add_submenu_page( 'sar_friendly_smtp', __( 'Settings', 'sar-friendly-smtp' ), __( 'Settings', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_friendly_smtp' );
-	add_submenu_page( 'sar_friendly_smtp', __( 'Send Email Test', 'sar-friendly-smtp' ), __( 'Send Email Test', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_fsmtp_email_test', 'sar_friendly_smtp_test_email');
+
+	// Adding pagges to variables for reference when enqueuing styles to the pages.
+	$sarfsmtp_settings_page = add_submenu_page( 'sar_friendly_smtp', __( 'Settings', 'sar-friendly-smtp' ), __( 'Settings', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_friendly_smtp' );
+	$sarfsmtp_test_page = add_submenu_page( 'sar_friendly_smtp', __( 'Send Email Test', 'sar-friendly-smtp' ), __( 'Send Email Test', 'sar-friendly-smtp' ), 'sar_fsmtp_options', 'sar_fsmtp_email_test', 'sar_friendly_smtp_test_email');
 }
 
 function sarfsmtp_settings_init(  ) { 
@@ -273,9 +292,9 @@ function sarfsmtp_from_name_setting_render( $args ) {
 	global $sarfsmtp_from_name;
 
 	if ( defined( 'SAR_FSMTP_FROM_NAME' ) && is_string( SAR_FSMTP_FROM_NAME ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_FROM_NAME constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';
+		echo '</p>';
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_from_name" value="<?php echo $sarfsmtp_from_name; ?>">
@@ -294,9 +313,9 @@ function sarfsmtp_from_address_setting_render( $args ) {
 	global $sarfsmtp_from_address;
 
 	if ( defined( 'SAR_FSMTP_FROM' ) && is_email( SAR_FSMTP_FROM ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_FROM constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';
+		echo '</p>';
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_from_address" value="<?php echo $sarfsmtp_from_address; ?>">
@@ -315,9 +334,9 @@ function sarfsmtp_username_setting_render( $args ) {
 	global $sarfsmtp_username;
 
 	if ( defined( 'SAR_FSMTP_USER' ) && is_string( SAR_FSMTP_USER ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_USER constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';
+		echo '</p>';
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_username" value="<?php echo $sarfsmtp_username; ?>">
@@ -337,9 +356,9 @@ function sarfsmtp_password_setting_render( $args ) {
 	global $sarfsmtp_password;
 
 	if ( defined( 'SAR_FSMTP_PASSWORD' ) && is_string( SAR_FSMTP_PASSWORD ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_PASSWORD constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';
+		echo '</p>';
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_password" value="<?php echo $sarfsmtp_password; ?>">
@@ -358,9 +377,9 @@ function sarfsmtp_smtp_server_setting_render( $args ) {
 	global $sarfsmtp_smtp_server;
 
 	if ( defined( 'SAR_FSMTP_HOST' ) && is_string( SAR_FSMTP_HOST ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_HOST constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';
+		echo '</p>';
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_smtp_server" value="<?php echo $sarfsmtp_smtp_server; ?>">
@@ -379,9 +398,9 @@ function sarfsmtp_port_setting_render( $args ) {
 	global $sarfsmtp_port;
 
 	if ( defined( 'SAR_FSMTP_PORT' ) && is_int( SAR_FSMTP_PORT ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_PORT constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';	
+		echo '</p>';	
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_port" value="<?php echo $sarfsmtp_port; ?>">
@@ -401,9 +420,9 @@ function sarfsmtp_encryption_setting_render( $args ) {
 	global $sarfsmtp_encryption;
 
 	if ( defined( 'SAR_FSMTP_ENCRYPTION' ) && in_array( SAR_FSMTP_ENCRYPTION , array( 'ssl', 'tls' ) ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_ENCRYPTION constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';
+		echo '</p>';
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_encryption" value="<?php echo $sarfsmtp_encryption; ?>">
@@ -427,9 +446,9 @@ function sarfsmtp_debug_mode_setting_render( $args ) {
 	global $sarfsmtp_debug_mode;
 
 	if ( defined( 'SAR_FSMTP_DEBUG_MODE' ) && is_string( SAR_FSMTP_DEBUG_MODE ) )  {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_DEBUG_MODE constant set in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';	
+		echo '</p>';	
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_debug_mode" value="<?php echo $sarfsmtp_debug_mode; ?>">
@@ -451,9 +470,9 @@ function sarfsmtp_allow_invalid_ssl_setting_render( $args ) {
 	global $sarfsmtp_allow_invalid_ssl;
 
 	if ( defined( 'SAR_FSMTP_ALLOW_INVALID_SSL' ) && is_string( SAR_FSMTP_ALLOW_INVALID_SSL ) ) {
-		echo '<div class="error" >';
+		echo '<p class="sar-warning" >';
 		_e( 'This setting is being overridden by SAR_FSMTP_ALLOW_INVALID_SSL constant in your wp-config.php file.', 'sar-friendly-smtp' );
-		echo '</div>';	
+		echo '</p>';	
 	// add current value in db as hidden input to prevent resetting the stored value
 	?>
 	<input type="hidden" name="sarfsmtp_allow_invalid_ssl" value="<?php echo $sarfsmtp_allow_invalid_ssl; ?>">
@@ -496,6 +515,9 @@ function sar_friendly_smtp_options_page(  ) {
         <h2><?php _e( 'SAR Friendly SMTP Settings', 'sar-friendly-smtp' ); ?></h2>
 
 		<?php
+
+		settings_errors(); // TODO: Register my own error messages and validations.
+
 		$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'smtp_server';
 		?>         
         <h2 class="nav-tab-wrapper">

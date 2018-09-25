@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sar-friendly-smtp\n"
-"POT-Creation-Date: 2017-09-20 17:42+0200\n"
-"PO-Revision-Date: 2017-09-20 17:42+0200\n"
+"POT-Creation-Date: 2018-09-23 21:23+0200\n"
+"PO-Revision-Date: 2018-09-23 21:30+0200\n"
 "Last-Translator: Samuel Aguilera <samuel@rocketgenius.com>\n"
 "Language-Team: Samuel Aguilera <correo@samuelguilera.com>\n"
 "Language: es_ES\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: includes/email-test.php:18
@@ -62,36 +62,51 @@ msgstr "Error fatal proporcionado por la clase PHPMailer:"
 msgid "SAR Friendly SMTP"
 msgstr "SAR Friendly SMTP"
 
-#: includes/email-test.php:69 includes/email-test.php:77
-#: sar-friendly-smtp.php:69 sar-friendly-smtp.php:143
+#: includes/email-test.php:69 includes/email-test.php:82
+#: sar-friendly-smtp.php:69 sar-friendly-smtp.php:162
 msgid "Send Email Test"
 msgstr "Prueba envío email"
 
 #: includes/email-test.php:71
 #, php-format
 msgid ""
-"%3$sFrom this screen you can try to send an email to the WordPress admin "
-"email in %1$sSettings -> General -> E-mail Address%2$s to see if your SMTP "
-"settings are correct.%4$s%3$sSimply click the button below.%4$s"
+"%3$sThe purporse of this test is only to check if, using the SMTP details "
+"you have configured in the plugin settins page, %1$sWordPress is able to "
+"connect with your SMTP server and ask the server to send a simple plain text "
+"email%2$s. After this, sending the email or not is determined by the rules "
+"set by your SMTP provider. %1$sTherefore a successful connection does not "
+"guarantee the email sending or its deliverability.%2$s%3$sThe email will be "
+"sent to the WordPress admin email configured in %1$sSettings -> General -> E-"
+"mail Address%2$s. If the result of the test is an error or the email is not "
+"received, you will want to contact with your SMTP server support for "
+"assistance.%4$s%3$sTo start the test, simply click the button below.%4$s%4$s"
 msgstr ""
-"%3$sDesde esta pantalla puedes probar a enviar un email a la dirección de "
-"email del administrador de WordPress en %1$sAjustes -> General -> Dirección "
-"de e-mail%2$s para ver si los ajustes SMTP son correctos.%4$s%3$sSimplemente "
-"haz clic en el botón a continuación.%4$s"
+"%3$sEl propósito de esta prueba es sólo comprobar si, usando los detalles "
+"del SMTP que has configurado en la página de ajustes de la extensión, "
+"%1$sWordPress es capaz de conectar con tu servidor SMTP y pedir al servidor "
+"que envíe un simple email de texto plano%2$s. Después de esto, enviar el "
+"email o no es determinado por las reglas establecidas en tu proveedor de "
+"SMTP. %1$sPor lo tanto, un conexión satisfactoria no garantiza el envío del "
+"email o su entregabilidad.%2$s%3$sEl email será enviado a la dirección de "
+"administración de WordPress configurada en %1$sAjustes -> Generales -> "
+"Dirección de correo electrónico%2$s. Si el resultado de la prueba es un "
+"error o no se recibe el email, querrás contactar con el soporte de tu "
+"servidor SMTP para que te ayude.%4$s%3$sPara comenzar la prueba, simplemente "
+"haz clic en el botón a continuación.%4$s%4$s"
 
-#: sar-friendly-smtp.php:68 sar-friendly-smtp.php:142
+#: sar-friendly-smtp.php:68 sar-friendly-smtp.php:161
 msgid "Settings"
 msgstr "Ajustes"
 
-#: sar-friendly-smtp.php:161 sar-friendly-smtp.php:502
+#: sar-friendly-smtp.php:180 sar-friendly-smtp.php:524
 msgid "SMTP Server details"
 msgstr "Datos del servidor SMTP"
 
-#: sar-friendly-smtp.php:168
+#: sar-friendly-smtp.php:187
 msgid "Username"
 msgstr "Usuario"
 
-#: sar-friendly-smtp.php:173
+#: sar-friendly-smtp.php:192
 msgid ""
 "Most SMTP servers requires your full email address as username (e.g. "
 "user@gmail.com )."
@@ -99,23 +114,23 @@ msgstr ""
 "La mayoría de servidores SMTP necesitan tu dirección de email completa como "
 "nombre de usuario (p.ej. usuario@gmail.com )."
 
-#: sar-friendly-smtp.php:178
+#: sar-friendly-smtp.php:197
 msgid "Password"
 msgstr "Contraseña"
 
-#: sar-friendly-smtp.php:187
+#: sar-friendly-smtp.php:206
 msgid "SMTP Server"
 msgstr "Servidor SMTP"
 
-#: sar-friendly-smtp.php:191
+#: sar-friendly-smtp.php:210
 msgid "Hostname of your SMTP server (e.g. smtp.gmail.com)."
 msgstr "Nombre de tu servidor SMTP (p.ej. smtp.gmail.com)."
 
-#: sar-friendly-smtp.php:196
+#: sar-friendly-smtp.php:215
 msgid "Port"
 msgstr "Puerto"
 
-#: sar-friendly-smtp.php:200
+#: sar-friendly-smtp.php:219
 msgid ""
 "If your server uses encryption, this should be 587 or 465 (e.g. Gmail and "
 "Mailgun use 587). If not, standard non encrypted port is 25."
@@ -123,11 +138,11 @@ msgstr ""
 "Si tu servidor usa encriptación, esto debería ser 587 o 465 (p.ej. Gmail y "
 "Mailgun usan el 587). Sino, el puerto estándar sin encriptación es el 25."
 
-#: sar-friendly-smtp.php:205
+#: sar-friendly-smtp.php:224
 msgid "Encryption"
 msgstr "Encriptación"
 
-#: sar-friendly-smtp.php:209
+#: sar-friendly-smtp.php:228
 msgid ""
 "When using ecryption, most common setting is TLS. (e.g. Gmail and Mailgun "
 "use TLS)."
@@ -135,15 +150,15 @@ msgstr ""
 "Cuando se usa encriptación el ajuste más utilizado habitualmente es TLS. (p."
 "ej. Gmail y Mailgun usan TLS)."
 
-#: sar-friendly-smtp.php:217 sar-friendly-smtp.php:503
+#: sar-friendly-smtp.php:236 sar-friendly-smtp.php:525
 msgid "FROM Field Settings"
 msgstr "Ajustes del campo FROM"
 
-#: sar-friendly-smtp.php:224
+#: sar-friendly-smtp.php:243
 msgid "FROM Name"
 msgstr "Nombre FROM"
 
-#: sar-friendly-smtp.php:228
+#: sar-friendly-smtp.php:247
 msgid ""
 "Name for the email FROM field. Only used if the original email uses your "
 "Site Title from Settings -> General."
@@ -151,11 +166,11 @@ msgstr ""
 "Nombre para el campo FROM. Sólo se usa si el email original usa el título de "
 "tu sitio web configurado en Ajustes -> General."
 
-#: sar-friendly-smtp.php:234
+#: sar-friendly-smtp.php:253
 msgid "FROM Address"
 msgstr "Dirección FROM"
 
-#: sar-friendly-smtp.php:238
+#: sar-friendly-smtp.php:257
 msgid ""
 "Email address for the email FROM field. Only used if the outgoing original "
 "message uses default value: wordpress@yourdomain.com"
@@ -163,15 +178,15 @@ msgstr ""
 "Dirección de email para el campo FROM. Sólo se usa si el email original usa "
 "el valor predeterminado: wordpress@ejemplo.com"
 
-#: sar-friendly-smtp.php:245 sar-friendly-smtp.php:504
+#: sar-friendly-smtp.php:264 sar-friendly-smtp.php:526
 msgid "Miscellaneous Settings"
 msgstr "Otros ajustes"
 
-#: sar-friendly-smtp.php:252
+#: sar-friendly-smtp.php:271
 msgid "Debug Mode"
 msgstr "Modo depuración"
 
-#: sar-friendly-smtp.php:256
+#: sar-friendly-smtp.php:275
 #, php-format
 msgid ""
 "Error Log option adds commands and data between WordPress and your SMTP "
@@ -181,11 +196,11 @@ msgstr ""
 "WordPress y tu servidor SMTP al archivo error_log de PHP. %sMás información "
 "en las FAQ%s."
 
-#: sar-friendly-smtp.php:261
+#: sar-friendly-smtp.php:280
 msgid "Allow Invalid SSL"
 msgstr "Permitir SSL no válido"
 
-#: sar-friendly-smtp.php:265
+#: sar-friendly-smtp.php:284
 #, php-format
 msgid ""
 "Allow connecting to a server with invalid SSL setup. Bear in mind this is "
@@ -197,7 +212,7 @@ msgstr ""
 "configuración SSL del servidor.  %sMás detalles en el repositorio Github de "
 "PHPMailer Github%s."
 
-#: sar-friendly-smtp.php:277
+#: sar-friendly-smtp.php:296
 msgid ""
 "This setting is being overridden by SAR_FSMTP_FROM_NAME constant set in your "
 "wp-config.php file."
@@ -205,7 +220,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_FROM_NAME en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:298
+#: sar-friendly-smtp.php:317
 msgid ""
 "This setting is being overridden by SAR_FSMTP_FROM constant set in your wp-"
 "config.php file."
@@ -213,7 +228,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_FROM en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:319
+#: sar-friendly-smtp.php:338
 msgid ""
 "This setting is being overridden by SAR_FSMTP_USER constant set in your wp-"
 "config.php file."
@@ -221,7 +236,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_USER en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:341
+#: sar-friendly-smtp.php:360
 msgid ""
 "This setting is being overridden by SAR_FSMTP_PASSWORD constant set in your "
 "wp-config.php file."
@@ -229,7 +244,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_PASSWORD en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:362
+#: sar-friendly-smtp.php:381
 msgid ""
 "This setting is being overridden by SAR_FSMTP_HOST constant set in your wp-"
 "config.php file."
@@ -237,7 +252,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_HOST en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:383
+#: sar-friendly-smtp.php:402
 msgid ""
 "This setting is being overridden by SAR_FSMTP_PORT constant set in your wp-"
 "config.php file."
@@ -245,7 +260,7 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_PORT en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:405
+#: sar-friendly-smtp.php:424
 msgid ""
 "This setting is being overridden by SAR_FSMTP_ENCRYPTION constant set in "
 "your wp-config.php file."
@@ -253,19 +268,19 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_ENCRYPTION en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:414
+#: sar-friendly-smtp.php:433
 msgid "None"
 msgstr "Ninguna"
 
-#: sar-friendly-smtp.php:415
+#: sar-friendly-smtp.php:434
 msgid "TLS"
 msgstr "TLS"
 
-#: sar-friendly-smtp.php:416
+#: sar-friendly-smtp.php:435
 msgid "SSL"
 msgstr "SSL"
 
-#: sar-friendly-smtp.php:431
+#: sar-friendly-smtp.php:450
 msgid ""
 "This setting is being overridden by SAR_FSMTP_DEBUG_MODE constant set in "
 "your wp-config.php file."
@@ -273,15 +288,15 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante SAR_FSMTP_DEBUG_MODE en tu "
 "archivo wp-config.php"
 
-#: sar-friendly-smtp.php:440 sar-friendly-smtp.php:464
+#: sar-friendly-smtp.php:459 sar-friendly-smtp.php:483
 msgid "Off"
 msgstr "Desactivado"
 
-#: sar-friendly-smtp.php:441
+#: sar-friendly-smtp.php:460
 msgid "Error Log"
 msgstr "Registro de errores"
 
-#: sar-friendly-smtp.php:455
+#: sar-friendly-smtp.php:474
 msgid ""
 "This setting is being overridden by SAR_FSMTP_ALLOW_INVALID_SSL constant in "
 "your wp-config.php file."
@@ -289,11 +304,11 @@ msgstr ""
 "Este ajuste está siendo anulado por  la constante "
 "SAR_FSMTP_ALLOW_INVALID_SSL  en tu archivo wp-config.php"
 
-#: sar-friendly-smtp.php:465
+#: sar-friendly-smtp.php:484
 msgid "On"
 msgstr "Activado"
 
-#: sar-friendly-smtp.php:475
+#: sar-friendly-smtp.php:494
 #, php-format
 msgid ""
 "These settings are %srequired%s. Be sure to put the correct settings here or "
@@ -307,7 +322,7 @@ msgstr ""
 "Después de guardar estos ajustes puedes probarlos desde %sPrueba envío email"
 "%s."
 
-#: sar-friendly-smtp.php:480
+#: sar-friendly-smtp.php:499
 #, php-format
 msgid ""
 "These settings are %1$soptional%2$s and only used if no other plugin using "
@@ -325,7 +340,7 @@ msgstr ""
 "extensión establece su propia información, WordPress usará los ajustes "
 "predeterminados para estos campos."
 
-#: sar-friendly-smtp.php:485
+#: sar-friendly-smtp.php:504
 #, php-format
 msgid ""
 "These settings are %1$soptional%2$s too. Remember to turn off Debug Mode "
@@ -336,10 +351,20 @@ msgstr ""
 "depuración cuando hayas solucionado el problema para evitar aumentar la "
 "carga de tu servidor generando archivos de registros innecesarios."
 
-#: sar-friendly-smtp.php:491
+#: sar-friendly-smtp.php:510
 msgid "You do not have sufficient permissions to access this page."
 msgstr "No tienes suficientes permisos para acceder a esta página."
 
-#: sar-friendly-smtp.php:496
+#: sar-friendly-smtp.php:515
 msgid "SAR Friendly SMTP Settings"
 msgstr "Ajustes de SAR Friendly SMTP"
+
+#~ msgid ""
+#~ "%3$sFrom this screen you can try to send an email to the WordPress admin "
+#~ "email in %1$sSettings -> General -> E-mail Address%2$s to see if your "
+#~ "SMTP settings are correct.%4$s%3$sSimply click the button below.%4$s"
+#~ msgstr ""
+#~ "%3$sDesde esta pantalla puedes probar a enviar un email a la dirección de "
+#~ "email del administrador de WordPress en %1$sAjustes -> General -> "
+#~ "Dirección de e-mail%2$s para ver si los ajustes SMTP son correctos.%4$s"
+#~ "%3$sSimplemente haz clic en el botón a continuación.%4$s"
