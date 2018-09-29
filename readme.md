@@ -102,8 +102,6 @@ I would recommend you to check any of the services below, all of them provide a 
 
 [MailRelay](https://mailrelay.com/)
 
-[Pepipost](https://pepipost.com/)
-
 [Sendinblue](https://sendinblue.com/)
 
 ### What means error messages displayed on send email test screen? 
