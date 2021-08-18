@@ -151,7 +151,7 @@ function sar_friendly_smtp( $phpmailer ) {
 	$wp_email_start = substr( $phpmailer->From, 0, 9 );
 
 	// Replace From only when default value and FROM Address setting are set.
-	if ( 'wordpress' === $wp_email_start && ( defined( 'SAR_FSMTP_FROM' ) || ! empty( $sarfsmtp_from_address ) ) ) {
+	if ( 'wordpress' === $wp_email_start && ( defined( 'SAR_FSMTP_FROM' ) || ! empty( $sarfsmtp_from_address ) ) ) { // phpcs:ignore
 		( defined( 'SAR_FSMTP_FROM' ) && is_email( SAR_FSMTP_FROM ) ) ? $phpmailer->From = SAR_FSMTP_FROM : $phpmailer->From = $sarfsmtp_from_address;
 	}
 
@@ -203,7 +203,7 @@ function sarfsmtp_add_admin_menu() {
  */
 function sarfsmtp_settings_init() {
 
-	// Register all setting keys.
+	// Register all setting keys. This includes sanitization of data being saved.
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_username', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_password', 'wp_filter_nohtml_kses' );
 	register_setting( 'sarfsmtp_settings_smtp_page', 'sarfsmtp_smtp_server', 'wp_filter_nohtml_kses' );
@@ -388,11 +388,11 @@ function sarfsmtp_username_setting_render( $args ) {
 		echo '</p>';
 		// add current value in db as hidden input to prevent resetting the stored value.
 		?>
-	<input type="hidden" name="sarfsmtp_username" value="<?php echo esc_attr( $sarfsmtp_username ); ?>">
+	<input type="hidden" name="sarfsmtp_username" value="<?php echo esc_html( $sarfsmtp_username ); ?>">
 		<?php
 	} else {
 		?>
-	<input type="text" class="regular-text" name="sarfsmtp_username" value="<?php echo esc_attr( $sarfsmtp_username ); ?>" title="Username">
+	<input type="text" class="regular-text" name="sarfsmtp_username" value="<?php echo esc_html( $sarfsmtp_username ); ?>" title="Username">
 	<p class="description"><?php echo esc_html( $args[0] ); ?></p>
 		<?php
 	}
@@ -609,7 +609,8 @@ function sar_friendly_smtp_options_page() {
 
 		settings_errors(); // TODO: Register my own error messages and validations.
 
-		$active_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : 'smtp_server';
+		// To check a nonce for $_GET add_submenu_page() should allow to add it to the URL, but it doesn't. I'm sanitizing the key anyway.
+		$active_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : 'smtp_server'; // phpcs:ignore
 		?>
 		<h2 class="nav-tab-wrapper">
 			<a href="?page=sar_friendly_smtp&tab=smtp_server" class="nav-tab <?php echo 'smtp_server' === $active_tab ? 'nav-tab-active' : ''; ?>"><?php esc_html_e( 'SMTP Server details', 'sar-friendly-smtp' ); ?></a>

@@ -3,8 +3,8 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E45TMW9JCPRW
 Tags: email, smtp, notifications, phpmailer, sendmail, wp_mail
 Requires at least: 4.9
-Tested up to: 5.2
-Stable tag: 1.2.5
+Tested up to: 5.8
+Stable tag: 1.2.6
 Requires PHP: 7.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -135,6 +135,10 @@ define( 'SAR_FSMTP_ALLOW_INVALID_SSL', 'on' );`
 This is useful if you want to use the same settings network-wide in a WordPress network (multisite installation).
 
 == Changelog ==
+
+= 1.2.6 =
+
+* WordPress Coding Standards changes.
 
 = 1.2.5 =
 
