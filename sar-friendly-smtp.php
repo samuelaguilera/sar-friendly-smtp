@@ -129,41 +129,45 @@ function sar_friendly_smtp( $phpmailer ) {
 		return;
 	}
 
-	$phpmailer->IsSMTP(); // Set PHPMailer to use SMTP.
 	// Note: WordPress coding standards will warn about incorrect snake_case for the PHPMailer variable names, but these can't be changed or PHPMailer will not recognize them!
-	$phpmailer->SMTPAuth = true; // Always use authentication. I don't support open relays!
+	// Set PHPMailer to use SMTP.
+	$phpmailer->IsSMTP(); // phpcs:ignore
+	// Always use authentication. I don't support open relays!
+	$phpmailer->SMTPAuth = true; // phpcs:ignore
 
 	// Override saved settings if constants are set in wp-config.php file.
-	( defined( 'SAR_FSMTP_USER' ) && is_string( SAR_FSMTP_USER ) ) ? $phpmailer->Username = SAR_FSMTP_USER : $phpmailer->Username = $sarfsmtp_username;
+	( defined( 'SAR_FSMTP_USER' ) && is_string( SAR_FSMTP_USER ) ) ? $phpmailer->Username = SAR_FSMTP_USER : $phpmailer->Username = $sarfsmtp_username; // phpcs:ignore
 
-	( defined( 'SAR_FSMTP_PASSWORD' ) && is_string( SAR_FSMTP_PASSWORD ) ) ? $phpmailer->Password = SAR_FSMTP_PASSWORD : $phpmailer->Password = $sarfsmtp_password;
+	( defined( 'SAR_FSMTP_PASSWORD' ) && is_string( SAR_FSMTP_PASSWORD ) ) ? $phpmailer->Password = SAR_FSMTP_PASSWORD : $phpmailer->Password = $sarfsmtp_password; // phpcs:ignore
 
-	( defined( 'SAR_FSMTP_HOST' ) && is_string( SAR_FSMTP_HOST ) ) ? $phpmailer->Host = SAR_FSMTP_HOST : $phpmailer->Host = $sarfsmtp_smtp_server;
+	( defined( 'SAR_FSMTP_HOST' ) && is_string( SAR_FSMTP_HOST ) ) ? $phpmailer->Host = SAR_FSMTP_HOST : $phpmailer->Host = $sarfsmtp_smtp_server; // phpcs:ignore
 
 	// IMPORTANT! Don't use quotes for the SAR_FSMTP_PORT value or the check will fail and the port will be not used.
-	( defined( 'SAR_FSMTP_PORT' ) && is_int( SAR_FSMTP_PORT ) ) ? $phpmailer->Port = SAR_FSMTP_PORT : $phpmailer->Port = $sarfsmtp_port;
+	( defined( 'SAR_FSMTP_PORT' ) && is_int( SAR_FSMTP_PORT ) ) ? $phpmailer->Port = SAR_FSMTP_PORT : $phpmailer->Port = $sarfsmtp_port; // phpcs:ignore
 
-	( defined( 'SAR_FSMTP_ENCRYPTION' ) && in_array( SAR_FSMTP_ENCRYPTION, array( 'ssl', 'tls' ), true ) ) ? $phpmailer->SMTPSecure = SAR_FSMTP_ENCRYPTION : $phpmailer->SMTPSecure = $sarfsmtp_encryption;
+	( defined( 'SAR_FSMTP_ENCRYPTION' ) && in_array( SAR_FSMTP_ENCRYPTION, array( 'ssl', 'tls' ), true ) ) ? $phpmailer->SMTPSecure = SAR_FSMTP_ENCRYPTION : $phpmailer->SMTPSecure = $sarfsmtp_encryption; // phpcs:ignore
 
-	$phpmailer->XMailer = 'SAR Friendly SMTP ' . SAR_FSMTP_VER . ' - WordPress Plugin';
+	$phpmailer->XMailer = 'SAR Friendly SMTP ' . SAR_FSMTP_VER . ' - WordPress Plugin'; // phpcs:ignore
 
 	// Be friendly with other plugins that may replace FROM field (e.g. Gravity Forms).
-	$wp_email_start = substr( $phpmailer->From, 0, 9 );
+	$wp_email_start = substr( $phpmailer->From, 0, 9 ); // phpcs:ignore
 
 	// Replace From only when default value and FROM Address setting are set.
 	if ( 'wordpress' === $wp_email_start && ( defined( 'SAR_FSMTP_FROM' ) || ! empty( $sarfsmtp_from_address ) ) ) { // phpcs:ignore
-		( defined( 'SAR_FSMTP_FROM' ) && is_email( SAR_FSMTP_FROM ) ) ? $phpmailer->From = SAR_FSMTP_FROM : $phpmailer->From = $sarfsmtp_from_address;
+		( defined( 'SAR_FSMTP_FROM' ) && is_email( SAR_FSMTP_FROM ) ) ? $phpmailer->From = SAR_FSMTP_FROM : $phpmailer->From = $sarfsmtp_from_address; // phpcs:ignore
 	}
 
 	// Replace FromName only when default value and FROM Name setting are set.
-	if ( 'WordPress' === $phpmailer->FromName && ( defined( 'SAR_FSMTP_FROM_NAME' ) || ! empty( $sarfsmtp_from_name ) ) ) {
-		( defined( 'SAR_FSMTP_FROM_NAME' ) && is_string( SAR_FSMTP_FROM_NAME ) ) ? $phpmailer->FromName = SAR_FSMTP_FROM_NAME : $phpmailer->FromName = $sarfsmtp_from_name;
+	if ( 'WordPress' === $phpmailer->FromName && ( defined( 'SAR_FSMTP_FROM_NAME' ) || ! empty( $sarfsmtp_from_name ) ) ) { // phpcs:ignore
+		( defined( 'SAR_FSMTP_FROM_NAME' ) && is_string( SAR_FSMTP_FROM_NAME ) ) ? $phpmailer->FromName = SAR_FSMTP_FROM_NAME : $phpmailer->FromName = $sarfsmtp_from_name; // phpcs:ignore
 	}
 
 	// Debug mode.
 	if ( ( defined( 'SAR_FSMTP_DEBUG_MODE' ) && ( 'error_log' === SAR_FSMTP_DEBUG_MODE ) ) || 'error_log' === $sarfsmtp_debug_mode ) {
-		$phpmailer->SMTPDebug   = 2; // Adds commands and data between WordPress and your SMTP server.
-		$phpmailer->Debugoutput = 'error_log'; // to PHP error_log file.
+		// Adds commands and data between WordPress and your SMTP server.
+		$phpmailer->SMTPDebug   = 2; // phpcs:ignore
+		// to PHP error_log file.
+		$phpmailer->Debugoutput = 'error_log'; // phpcs:ignore
 	}
 
 	// Allow invalid SSL https://github.com/PHPMailer/PHPMailer/issues/270 .

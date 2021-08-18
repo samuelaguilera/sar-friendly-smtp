@@ -18,7 +18,7 @@ function sar_friendly_smtp_test_email() {
 
 	if ( isset( $_POST['sarfsmtp_test'] ) ) {
 
-		if ( ! wp_verify_nonce( sanitize_key( $_POST['sarfsmtp_nonce'] ), 'sarfsmtp_email_test' ) ) {
+		if ( ! wp_verify_nonce( sanitize_key( $_POST['sarfsmtp_nonce'] ), 'sarfsmtp_email_test' ) ) { // phpcs:ignore
 			wp_die( 'Security check not passed!' );
 		}
 
@@ -39,10 +39,10 @@ function sar_friendly_smtp_test_email() {
 					echo '<div id="message" class="error fade"><p>';
 					esc_html_e( 'WordPress was not able to pass the email to the SMTP server.', 'sar-friendly-smtp' );
 					echo '</p>';
-				if ( ! empty( $phpmailer->ErrorInfo ) ) {
+				if ( ! empty( $phpmailer->ErrorInfo ) ) { // phpcs:ignore
 					echo '<p>';
-					esc_html_e( 'Error returned by PHPMailer class:', 'sar-friendly-smtp' );
-					echo '<strong>' . wp_filter_nohtml_kses( $phpmailer->ErrorInfo ) . '</strong></p></div>';
+					esc_html_e( 'Error returned by PHPMailer class: ', 'sar-friendly-smtp' );
+					echo '<strong>' . esc_textarea( wp_filter_nohtml_kses( $phpmailer->ErrorInfo ) ) . '</strong></p></div>'; // phpcs:ignore
 				} else {
 					echo '<p>';
 					esc_html_e( 'No additional information has been provided by PHPMailer class. Try enabling Error Log in Debug Mode setting and checking your server logs.', 'sar-friendly-smtp' );
@@ -53,7 +53,7 @@ function sar_friendly_smtp_test_email() {
 			echo '<div id="message" class="error fade"><p>';
 			esc_html_e( 'WordPress was not able to pass the email to the SMTP server.', 'sar-friendly-smtp' );
 			echo '</p><p>';
-			esc_html_e( 'Fatal Error returned by PHPMailer class:', 'sar-friendly-smtp' );
+			esc_html_e( 'Fatal Error returned by PHPMailer class: ', 'sar-friendly-smtp' );
 			echo '<strong>' . esc_html( $e->getMessage() ) . '</strong></p></div>';
 		}
 	}
